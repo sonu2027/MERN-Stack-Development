@@ -1,0 +1,16 @@
+Q.3 What’s Call Apply Bind Method & Difference Between them
+
+Ans. 
+call:
+The call method is used to invoke a function with a specified this value and individual arguments passed directly to the function. It takes the this value as the first argument, followed by any number of additional arguments to be passed to the function.
+
+apply:
+The apply method is similar to call, but it takes arguments as an array or an array-like object. It is useful when you have an array of values or when the number of arguments is unknown or variable.
+
+bind:
+The bind method creates a new function that is bound to a specific this value. It returns a new function that, when invoked, has its this value set to the provided value. It does not immediately invoke the function.
+
+Differences:
+call and apply immediately invoke the function with the specified this value, while bind returns a new function that can be invoked later.
+call accepts arguments individually, whereas apply accepts arguments as an array or an array-like object.
+bind allows you to create a new function with a permanently bound this value, while call and apply only temporarily set the this value for a single invocation.

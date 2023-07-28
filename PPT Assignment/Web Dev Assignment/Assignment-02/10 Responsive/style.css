@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#box{
+    margin-top: 1%;
+    height: 100vh;
+}
+.desktop{
+    /* height: 47%; */
+    height: 16rem;
+    width: 30rem;
+    border: 1px solid red;
+    position: relative;
+    left: 25%;
+    top: 5%;
+    background-color: red;
+}
+.laptop{
+    /* height: 38%; */
+    height: 12rem;
+    width: 20rem;
+    border: 1px solid red;
+    position: relative;
+    left: 50%;
+    bottom: 12%;
+    z-index: 1;
+    background-color: blue;
+}
+.tablet{
+    /* height: 45%; */
+    height: 15rem;
+    width: 10rem;
+    border: 1px solid red;
+    position: relative;
+    left: 20%;
+    bottom: 47%;
+    z-index: 1;
+    background-color: green;
+}
+.phone{
+    /* height: 27%; */
+    height: 8rem;
+    width: 4rem;
+    border: 1px solid red;
+    position: relative;
+    bottom: 60%;
+    left: 30%;
+    z-index: 2;
+    background-color: yellow;
+}
+
+@media screen and (max-width:1075px){
+    html{
+        font-size: 90%;
+    }
+}
+@media screen and (max-width:1000px){
+    html{
+        font-size: 80%;
+    }
+}
+@media screen and (max-width:900px){
+    html{
+        font-size: 75%;
+    }
+    .phone{
+        bottom: 55%;
+    }
+}
+@media screen and (max-width:815px){
+    html{
+        font-size: 75%;
+    }
+    .phone{
+        bottom: 55%;
+        left:30%;
+    }
+}
+@media screen and (max-width:815px){
+    html{
+        font-size: 75%;
+    }
+    .phone{
+        bottom: 58%;
+        left:33%;
+    }
+}
+@media screen and (max-width:600px){
+    html{
+        font-size: 65%;
+    }
+    .laptop{
+        bottom:8%
+    }
+    .tablet{
+        bottom: 32%;
+    }
+    .phone{
+        bottom: 43%;
+        left: 32%;
+    }
+}
+@media screen and (max-width:550px){
+    html{
+        font-size: 55%;
+    }
+    .laptop{
+        bottom:5%
+    }
+    .tablet{
+        bottom: 28%;
+    }
+    .phone{
+        bottom: 38%;
+        left: 33%;
+    }
+}
+@media screen and (max-width:460px){
+    html{
+        font-size: 50%;
+    }
+    .laptop{
+        bottom:3%
+    }
+    .tablet{
+        bottom: 20%;
+    }
+    .phone{
+        bottom: 30%;
+        left: 35%;
+    }
+}
+@media screen and (max-width:370px){
+    html{
+        font-size: 45%;
+    }
+    .desktop{
+        height: 14rem;
+    }
+    .laptop{
+        bottom:4%;
+        height: 12rem;
+    }
+    .tablet{
+        bottom: 17%;
+        height: 13rem;
+        width: 8rem;
+    }
+    .phone{
+        bottom: 23%;
+        left: 32%;
+    }
+}

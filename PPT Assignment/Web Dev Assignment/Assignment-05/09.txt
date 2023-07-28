@@ -1,0 +1,46 @@
+Q.9 Explain fetch
+
+Ans. fetch() is a built-in web API in JavaScript that provides a modern and flexible way to make network requests, typically used for retrieving resources from a server using HTTP. It allows you to send HTTP requests and handle the response using promises.
+
+The fetch() function returns a promise that resolves to the Response object representing the response to the request. It provides a range of methods to access and handle the response, such as reading the response body, checking the status code, headers, and more.
+
+example of using fetch() to make a simple GET request:
+fetch('https://api.example.com/data')
+  .then(function(response) {
+    if (response.ok) {
+      return response.json(); // Parse the response body as JSON
+    } else {
+      throw new Error('Network response was not ok.');
+    }
+  })
+  .then(function(data) {
+    console.log('Data:', data);
+  })
+  .catch(function(error) {
+    console.error('Error:', error);
+  });
+
+
+example of making a POST request with JSON payload:
+const payload = {
+  name: 'John Doe',
+  email: 'johndoe@example.com'
+};
+
+fetch('https://api.example.com/submit', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(payload)
+})
+  .then(function(response) {
+    if (response.ok) {
+      console.log('Data submitted successfully.');
+    } else {
+      throw new Error('Network response was not ok.');
+    }
+  })
+  .catch(function(error) {
+    console.error('Error:', error);
+  });

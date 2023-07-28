@@ -1,0 +1,22 @@
+Q.3 Difference between Virtual Dom vs Real Dom
+
+Ans. The main difference between Virtual DOM and Real DOM lies in their respective roles and how they handle updates in a web application.
+
+Real DOM (Document Object Model):
+Definition: The Real DOM is the actual hierarchical representation of HTML elements in a web page. It is a tree-like structure that browsers construct from the HTML markup provided by developers.
+
+Creation: When a web page loads or changes, the browser parses the HTML, creates the Real DOM, and renders it on the screen.
+
+Updates: Whenever there is a change in the application's state or data, the Real DOM needs to be updated to reflect these changes. This update process involves making direct changes to the actual DOM elements on the web page.
+
+Performance: Directly manipulating the Real DOM can be slow and inefficient, especially in large and complex web applications. Frequent updates and manipulations can lead to performance issues and a less responsive user interface.
+
+
+Virtual DOM (Virtual Document Object Model):
+Definition: The Virtual DOM is an abstraction or lightweight copy of the Real DOM. It is a JavaScript representation of the actual DOM, but it contains only the necessary information to represent the structure and properties of the UI components.
+
+Creation: When using libraries like React, developers create and work with the Virtual DOM through JavaScript code. The Virtual DOM is typically generated from the component hierarchy and state data.
+
+Updates: When the state of a component changes, React creates a new Virtual DOM representing the updated state. It then compares this new Virtual DOM with the previous one using a process called "diffing" to identify the specific changes or updates needed.
+
+Performance: By performing a diffing process, React efficiently identifies the minimum number of changes required to update the Real DOM. Instead of directly manipulating the entire DOM, it applies these minimal updates, making the process faster and more efficient.

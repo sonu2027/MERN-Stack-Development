@@ -1,0 +1,10 @@
+Q.6 What are some of the advantages of HTML5 over its previous versions?
+
+Ans. HTML5 introduced several significant advantages over its previous versions. some of the key advantages are --
+
+a. Multimedia Support
+b. Improved Semantics
+c. Offline and Storage Capabilities
+d. Mobile-Friendly Features
+e. Improved Accessibility
+f. Enhanced CSS3 Integration

@@ -1,0 +1,14 @@
+Q.6 Whats Polymorphism and Purpose of it?
+
+Ans. Polymorphism is a fundamental concept in object-oriented programming that allows objects of different types to be treated as objects of a common superclass. It allows for the use of a single interface to represent multiple related classes, providing flexibility and extensibility in code design.
+
+Purpose:
+a. Code Reusability: Polymorphism promotes code reuse by allowing objects of different classes to be treated interchangeably. This means that you can write code that operates on a superclass or interface type, and it can be used with any subclass that inherits or implements that superclass or interface. This promotes modular and reusable code.
+
+b. Method Overriding: Polymorphism allows subclasses to override methods defined in their superclass. This means that a method with the same name and signature in a subclass can provide a specialized implementation of that method. When the overridden method is called on an object of the subclass, the overridden version is invoked instead of the superclass version. This enables customized behavior based on the specific subclass.
+
+c. Interface Implementation: Polymorphism enables multiple classes to implement the same interface, providing a common contract for a set of related behaviors. Interfaces define a set of methods that implementing classes must implement. By treating objects as instances of the interface type, you can write code that is independent of the specific implementation and can be used with any class that fulfills the interface contract.
+
+d. Dynamic Method Dispatch: Polymorphism allows for dynamic method dispatch, where the specific method to be invoked is determined at runtime based on the actual type of the object. This enables the flexibility to use the appropriate overridden method implementation based on the actual object type, even if the reference type is a superclass or interface.
+
+e. Abstraction and Flexibility: Polymorphism facilitates abstraction by allowing you to work with objects based on their general characteristics and behaviors rather than their specific implementation details. It provides flexibility and extensibility, allowing you to introduce new subclasses or implementations that can be seamlessly integrated into existing code without requiring modifications to the calling code.

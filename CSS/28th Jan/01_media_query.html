@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query</title>
+    <style>
+        /* body{
+            background-color: red;
+        } */
+        div{
+            font-size: x-large;
+            text-align: center;
+        }
+        /* div::after{
+            content: 'I am content'
+        } */
+        @media(max-width:600px){
+            body{
+                background-color: violet;
+            }
+            div::after{
+                content:'Extra small devices';
+            }
+        }
+        @media(min-width:600px){
+            body{
+                background-color: indigo;
+            }
+            div::after{
+                content:'Small device';
+            }
+        }
+        @media(min-width:768px){
+            body{
+                background-color: blue;
+            }
+            div::after{
+                content:'Medium devices';
+            }
+        }
+        @media(min-width:992px){
+            /*If the viewport width will greater than 992px then this CSS will apply*/
+            body{
+                background-color: green;
+            }
+            div::after{
+                content:'Large devices'
+            }
+        }
+        @media(min-width:1200px){
+            body{
+                background-color: yellow;
+            }
+            div::after{
+                content:'Extra Large';
+            }
+        }
+        /*If the viewport width will greater than 900px then this CSS will apply*/
+        /* @media(500px  < width < 800px){
+            body{
+                background-color: rgb(171, 148, 16);
+            }
+            div::after{
+                content:'Very small'
+            }
+        } */
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

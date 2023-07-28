@@ -1,0 +1,5 @@
+Q.5 What are Callbacks &  Callback Hell ?
+
+Ans. Callbacks: Callbacks are functions that are passed as arguments to other functions and are intended to be executed after a particular task or operation is completed. They are commonly used in asynchronous JavaScript programming to handle the results of asynchronous operations or to perform actions after a certain event occurs.
+
+Callback: Callback Hell, also known as the Pyramid of Doom, is a term used to describe a situation where multiple nested callbacks are used in asynchronous code, leading to code that becomes hard to read, understand, and maintain. This can occur when you have several asynchronous operations that depend on each other's results or need to be executed in a specific sequence.

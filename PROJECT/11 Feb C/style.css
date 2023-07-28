@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+html{
+  font-size: 62.5%;
+}
+body {
+  background-color: #f0f4f5;
+  overflow: hidden;
+}
+
+
+/* Nav baar editing */
+li{
+  list-style: none;
+}
+li a{
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+}
+nav{
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  column-gap: 60rem;
+  margin-top: 2.2rem;
+}
+nav ul{
+  display: flex;
+  column-gap: 5rem;
+  position: relative;
+  right: 4rem;
+  top: 2rem;
+}
+ul li a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  color: #20bc7e;
+}
+nav .logo img{
+  width: 15rem;
+}
+
+
+/* Main element editing */
+main{
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.right-side-main{
+  height: 85vh;
+  width: 20%;
+}
+.left-side-main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  left: 8rem;
+}
+.upper-left-side-main h1{
+  font-size: 7rem;
+  position: relative;
+  bottom: 2rem;
+}
+.upper-left-side-main p{
+  font-size: 1.8rem;
+  color: #7c7c7c;
+}
+button{
+  padding: 1.3rem 3rem;
+  font-size: 2.5rem;
+  border-radius: 3rem;
+  font-weight: 700;
+  background-color: #20bc7e;
+  border: none;
+  color: #f0f4f5;
+}
+button:hover{
+  background-color: #fff;
+  border: 1px solid  #20bc7e;
+  cursor: pointer;
+  color: #20bc7e;
+}
+.lower-left-side-main{
+  height: 7rem;
+  width: 29rem;
+}
+.greenBox{
+  position: relative;
+  bottom: 38rem;
+  left: 26rem;
+  z-index: -1;
+}
+.yellowBox{
+  position: relative;
+  top: 10rem;
+  left: 33rem;
+}
+.greenBox img{
+ width: 48rem;
+}
+.yellowBox img{
+  width: 42rem;
+}
+.doctorImage img{
+  width: 42rem;
+}
+.doctorImage{
+  position: relative;
+  bottom: 96rem;
+  left: 32rem;
+}
+.bottomAngle{
+  position: relative;
+  left: 60rem;
+  top: 2rem;
+}
+.topAngle{
+  position: relative;
+  bottom: 2rem;
+}

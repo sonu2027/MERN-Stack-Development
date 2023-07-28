@@ -1,0 +1,7 @@
+Q.1 Explain Middlewares in NodeJS ?
+
+Ans. In Node.js, middlewares are functions that are used to process incoming HTTP requests before they are handled by the main request handler (e.g., a route handler) or to process the outgoing HTTP response before it is sent back to the client. Middlewares play a crucial role in creating efficient and modular web applications in Node.js.
+
+Middleware functions are executed sequentially in the order they are defined in the application. Each middleware function has access to the request and response objects and can perform certain tasks, modify the request/response, or pass the control to the next middleware in the chain.
+
+Middleware functions can be used for various purposes, such as authentication, logging, error handling, parsing request data, setting headers, and much more.

@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  html{
+    font-size: 62.5%;
+  }
+  body {
+    background-color: #f0f4f5;
+    overflow: hidden;
+  }
+  
+  
+  /* Nav baar editing */
+  li{
+    list-style: none;
+  }
+  li a{
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+  }
+  nav{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 60rem;
+    margin-top: 2.2rem;
+  }
+  nav ul{
+    display: flex;
+    column-gap: 5rem;
+    position: relative;
+    right: 4rem;
+    top: 2rem;
+  }
+  ul li a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #20bc7e;
+  }
+  nav .logo img{
+    width: 15rem;
+  }
+
+  /* section */
+  section{
+    box-shadow: 0 0 10px black;
+    margin: 4rem 50rem;
+    height: 65vh;
+    border-radius: 15px;
+    width: 25%;
+  }
+  form{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.7rem;
+    margin: 0 2rem;
+  }
+  section h1{
+    /* border: 1px solid green; */
+    text-align: center;
+    font-size: 3rem;
+    padding: 1.5rem 0;
+    font-weight: 700;
+  }
+  input{
+    border: transparent;
+    border-radius: 10px;
+    width: 30rem;
+    padding: 0.5rem 0;
+  }
+  label{
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  textarea{
+    padding-bottom: 5rem;
+    border: transparent;
+    border-radius: 10px;
+    border: transparent;
+    resize: none;
+  }
+  button{
+    padding: 1.2rem 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    background-color: #20bc7e;
+    color:#f0f4f5;
+    border:none;
+    border-radius: 1.2rem;
+  }
+  button:hover{
+    background-color: #fff;
+    color: #20bc7e;
+    cursor: pointer;
+    border: 1px solid #20bc7e;
+  }

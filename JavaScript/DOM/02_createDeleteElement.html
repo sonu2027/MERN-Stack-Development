@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Home</li>
+        <li>Contact</li>
+        <li>About us</li>
+    </ul>
+    <script>
+        /* Append child */
+        let var1=document.createElement("h1"); // It will create h1 tag
+        var1.className="sonu"; // It will give the class name of h1 tag
+        var1.style.fontSize="25px"; // It will set the font-size of h1 tag
+        var1.textContent="Hello world!"; // It will craete the content under the h1 tag
+        console.log(var1); // It will print the h1 tag
+        document.body.appendChild(var1);
+
+        /* remove child */
+        let ul=document.querySelector("ul"); //Targeting ul
+        console.log(ul); // Printing ul
+        let li=document.querySelectorAll("li"); // Targeting all list
+        console.log(li); // Printing list
+        for(list of li){
+            ul.removeChild(list); // Removing list one by one
+        } 
+    </script>
+</body>
+</html>

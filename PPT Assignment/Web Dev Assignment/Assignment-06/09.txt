@@ -1,0 +1,24 @@
+Q.9 Explain Class in JavaScript?
+
+Ans. In JavaScript, a class is a blueprint or a template for creating objects that encapsulate data (attributes) and behaviors (methods) related to a specific concept or entity. It provides a way to define a reusable structure for creating objects with shared characteristics and functionalities.
+
+Introduced in ECMAScript 2015 (ES6), classes in JavaScript are syntactic sugar over the existing prototype-based inheritance system. They provide a more familiar syntax and a more organized way to define object-oriented programming constructs.
+
+Here's the syntax for defining a class in JavaScript:
+class ClassName {
+  constructor(/* constructor parameters */) {
+    // Initialization code
+  }
+
+  method1(/* method1 parameters */) {
+    // Method 1 implementation
+  }
+
+  method2(/* method2 parameters */) {
+    // Method 2 implementation
+  }
+
+  // ...
+}
+
+

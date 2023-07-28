@@ -1,0 +1,10 @@
+Q.1 What are hooks in react? how to identify hooks?
+
+Ans. In React, hooks are functions that allow you to add state and other React features to functional components. They were introduced in React 16.8 as a way to use stateful logic and other React features without using class components. Hooks provide a more concise and straightforward way to manage component state and lifecycle.
+
+To identify hooks in your React code, follow these guidelines:
+A. Hooks always start with the use prefix, followed by the hook name (e.g., useState, useEffect, useContext, etc.).
+
+B. Hooks can only be used in functional components or other custom hooks. They cannot be used in class components.
+
+C.The rules of hooks mandate that hooks should always be called at the top level of a functional component. Do not call hooks inside loops, conditions, or nested functions.

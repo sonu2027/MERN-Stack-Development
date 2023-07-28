@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        footer{
+            background-color: rgb(16, 15, 15);
+            color: #9a9a9a;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            column-gap: 10%;
+            padding: 4rem 5%;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #9a9a9a;
+            line-height: 3rem;
+        }
+        p{
+            line-height: 2rem;
+        }
+        button a{
+            text-decoration: none;
+        }
+        input{
+            width: 24vw;
+            height: 8vh;
+            border-radius: 0.5rem;
+            border: 1px solid rgb(11, 11, 11);
+        }
+        button{
+            width: 24vw;
+            height: 8vh;
+            border-radius: 0.5rem;
+            border: 1px solid rgb(11, 11, 11);
+            background-color:rgb(96, 132, 241);
+        }
+        button a{
+            color: #fff;
+        }
+        h2{
+            color: #fff;
+        }
+        @media screen and (max-width:768px){
+            footer{
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            #navigation{
+                position: relative;
+                right: 13%;
+            }
+            #support{
+                position: relative;
+                right: 14%;
+            }
+            #newsletter{
+                position: relative;
+                right: 4%;
+            }
+            button{
+                width: 37vw;
+                height: 10vh;
+            }
+            input{
+                width: 36vw;
+                height: 10vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div id="onecard">
+            <h2>One Card</h2>
+            <p>India's best metal credit card. Built with full <br>-stack tech. Backed by the principle of <br> simplicity, transparencey and giving back <br> control to the user</p>
+        </div>
+        <div id="navigation">
+            <h2>Navigation</h2>
+                <a href="">Home</a><br><br>
+                <a href="">About us</a><br><br>
+                <a href="">Careers</a><br><br>
+                <a href="">Offers</a>
+        </div>
+        <div id="support">
+            <h2>Support</h2>
+            <a href="">FAQs</a><br><br>
+            <a href="">Cookies Policy</a><br><br>
+            <a href="">TermsOfService</a><br><br>
+            <a href="">Support</a>
+        </div>
+        <div id="newsletter">
+            <h2>Newsletter</h2>
+            <input type="email" name="" id="" value="your email id here"><br>
+            <button><a href="">Subscribe</a></button>
+        </div>
+    </footer>
+</body>
+</html>

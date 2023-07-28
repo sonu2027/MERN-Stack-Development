@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>User Details</legend>
+        <label for="Name">Enter your name:</label>
+        <input type="text" id="Name" name="username" value="sonu" readonly disabled>
+        <br>
+        <!-- For multiline input we use textarea tag -->
+        <label for="Address">Enter your address</label>
+        <textarea name="useraddress" id="Address" cols="20" rows="10" autofocus></textarea>
+        <br>
+        <label for="DOB">Enter DOB</label>
+        <input name="userDOB" type="date" id="DOB">
+        <br>
+        <label for="password">Enter your password</label>
+        <input type="password" name="userepassword" id="password" placeholder="1@#hf">
+        <br>
+        <label>select your gender:</label>
+        <br>
+        <label for="male">Male</label>
+        <input type="radio" name="usergender" id="male">
+        <label for="female">Female</label>
+        <input type="radio" name="usergender" id="female">
+        <br>
+        <label for="">Select your favorite avengers:</label>
+        <br>
+        <label for="a1">Thor</label>
+        <input type="checkbox" name="thor" id="a1">
+        <label for="a2">Captain america</label>
+        <input type="checkbox" name="captain america" id="a2">
+        <label for="a3">spider man</label>
+        <input type="checkbox" name="spider man" id="a3">
+        <label for="a4">hulk</label>
+        <input type="checkbox" name="hulk" id="a4">
+        <br>
+
+        <input type="number" min="0" max="1000">
+        <br>
+        <input type="submit" value="Submit">
+        </fieldset>
+         <input type="">
+    </form>
+</body>
+</html>

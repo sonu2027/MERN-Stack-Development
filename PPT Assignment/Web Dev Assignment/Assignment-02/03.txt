@@ -1,0 +1,9 @@
+Q.3 What is VW/VH ?
+
+Ans. In CSS, vw and vh are units of measurement that represent a percentage of the viewport width and height, respectively.
+
+vw: Viewport width unit. 1vw is equal to 1% of the width of the viewport. For example, if the viewport width is 1000 pixels, 1vw would be equivalent to 10 pixels (1% of 1000 pixels).
+
+vh: Viewport height unit. 1vh is equal to 1% of the height of the viewport. For example, if the viewport height is 800 pixels, 1vh would be equivalent to 8 pixels (1% of 800 pixels).
+
+These units provide a responsive and relative way to size elements based on the dimensions of the viewport (the visible area of a web page).

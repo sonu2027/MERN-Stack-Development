@@ -1,0 +1,9 @@
+Q.4 how can you handle Async code in JavaScript ?
+
+Ans.  some commonly used approaches for handling asynchronous code:
+
+Callbacks: Callbacks are a traditional way of handling asynchronous code in JavaScript. A callback function is passed as an argument to an asynchronous function. When the asynchronous operation completes, the callback function is invoked, allowing you to handle the result.
+
+Promises: Promises provide a cleaner and more structured way to handle asynchronous operations. Promises represent the eventual completion or failure of an asynchronous operation and allow chaining of operations using .then() and .catch() methods.
+
+Async/await: This is a modern approach to handle asynchronous code in JavaScript. It provides a syntactic sugar on top of promises, making asynchronous code look more like synchronous code, which can improve readability and maintainability.

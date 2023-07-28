@@ -1,0 +1,7 @@
+07. What’s async & await Keyword in JavaScript
+
+Ans. The async and await keywords are part of the asynchronous programming features introduced in JavaScript to simplify the handling of promises and make asynchronous code appear more like synchronous code.
+
+a. async: The async keyword is used to define an asynchronous function. It can be placed before a function declaration, function expression, or arrow function. An async function always returns a promise, and the value it resolves to is determined by the return value of the function.
+
+b. await: The await keyword can only be used inside an async function. It pauses the execution of the async function until a promise is fulfilled and returns the fulfilled value. It allows you to write asynchronous code in a more sequential and synchronous-like manner

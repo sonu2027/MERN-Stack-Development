@@ -1,0 +1,23 @@
+Q.7 Explain Prop Drilling in React & Ways to avoid it
+
+Ans. Prop drilling, also known as "props drilling" or "deep prop passing," is a situation that occurs in React when data needs to be passed through multiple intermediate components in the component tree, even though some of those intermediate components don't directly use or need that data. This can lead to code complexity and decreased maintainability, as the data has to be passed down through multiple layers of components.
+
+To avoid prop drilling and keep your codebase more maintainable, there are several approaches you can take:
+
+A. Context API:
+React provides a Context API, which allows data to be passed down the component tree without the need to explicitly pass it through props. Context provides a way to share data at multiple levels of the component tree without prop drilling.
+
+B. State Management Libraries:
+Use state management libraries like Redux or MobX. These libraries allow you to centralize the application state and access it from any component without the need for prop drilling.
+
+C. Custom Hooks:
+Create custom hooks to encapsulate the logic for accessing and manipulating shared data. Custom hooks can be reused across multiple components, reducing the need for prop drilling.
+
+D. React's Render Props:
+The "render prop" pattern involves passing a render function as a prop to a component, allowing the child component to use that function to render content. This can be used to pass down data from a higher-level component to a lower-level component without prop drilling.
+
+E. Higher-Order Components (HOCs):
+As mentioned earlier, HOCs can wrap components to provide additional functionality. HOCs can also be used to inject shared data into components without passing it through props explicitly.
+
+F. React Hooks:
+Use React hooks like useState, useReducer, and useContext to manage local component state and access shared data without prop drilling.

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo class</title>
+    <style>
+        .hover a:hover{
+            background-color: antiquewhite;
+            color: brown;
+        }
+        input:focus{
+            background-color: antiquewhite;
+            color:green;
+            font-size: 20px;
+        }
+        .hover a:active{
+            color: blue;
+        }
+        .hover a{
+            text-decoration: none;
+        }
+        .visited a:visited{
+            color: rgb(19, 117, 14);
+        }
+        .first-child a:first-child{
+            color: yellow;
+        }
+        .nthchild a:nth-child(4){
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- hover and active-->
+    <nav class="hover">
+        <a href="#">Google</a>
+    </nav>
+
+    <!-- focus -->
+    <input type="text">
+
+    <!-- visited -->
+    <nav class="visited">
+        <a href="https://drive.google.com/file/d/1Z4-beiRCb3lOEV-QDV0tLb8xE6jIFzR3/view">Facebook</a>
+    </nav>
+
+    <!-- first-child -->
+    <div class="first-child">
+        <a href="#">Google</a>
+        <a href="https://drive.google.com/file/d/1Z4-beiRCb3lOEV-QDV0tLb8xE6jIFzR3/view">Facebook</a>
+    </div>
+
+    <div class="nthchild">
+        <a href="#">Google</a>
+        <a href="https://drive.google.com/file/d/1Z4-beiRCb3lOEV-QDV0tLb8xE6jIFzR3/view">Facebook</a>
+        <a href="#">Google</a>
+        <a href="https://drive.google.com/file/d/1Z4-beiRCb3lOEV-QDV0tLb8xE6jIFzR3/view">Facebook</a>
+        <a href="#">Google</a>
+        <a href="https://drive.google.com/file/d/1Z4-beiRCb3lOEV-QDV0tLb8xE6jIFzR3/view">Facebook</a>
+    </div>
+</body>
+</html>

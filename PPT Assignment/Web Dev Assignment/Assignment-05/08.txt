@@ -1,0 +1,11 @@
+Q.8 Explain Purpose of Try and Catch Block & Why do we need it?
+
+Ans. explanation of the purpose and importance of try and catch blocks:
+
+a. Error Handling: The primary purpose of the try and catch blocks is to handle errors that may occur within a specific block of code. When an exception or error occurs within the try block, the code execution is immediately transferred to the corresponding catch block.
+
+b. Graceful Recovery: By using try and catch, you can gracefully recover from errors and prevent them from crashing the entire program or causing unexpected behavior. Instead of abruptly terminating the program, you can handle the error condition in a controlled manner.
+
+c. Error Logging: catch blocks allow you to log or report the occurrence of an error, providing valuable information for debugging and troubleshooting purposes. You can log the error details, stack trace, or any additional information that helps identify the cause of the error.
+
+d. Custom Error Handling: catch blocks enable you to define custom error handling logic based on the type or nature of the error. You can implement specific actions or fallback strategies depending on the specific error scenario, such as displaying a user-friendly message, retrying the operation, or rolling back changes.

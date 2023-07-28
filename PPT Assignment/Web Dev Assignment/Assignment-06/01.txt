@@ -1,0 +1,12 @@
+Q.1 What’s Constructor And Its Purpose?
+
+Ans. In object-oriented programming, a constructor is a special method or function that is used to initialize and set up an object when it is created from a class or a blueprint. It is called automatically when an object is instantiated, and its purpose is to ensure that the object is properly initialized and ready for use.
+
+Here are the key aspects and purposes of constructors:
+Object Initialization: The primary purpose of a constructor is to initialize the state and properties of an object. It sets the initial values of instance variables, allocates memory, and performs any necessary setup operations to prepare the object for use.
+
+Automatic Invocation: Constructors are automatically called when an object is created or instantiated. When you create a new instance of a class using the new keyword, the constructor associated with that class is invoked to initialize the object.
+
+Class-Specific Behavior: Constructors are defined within classes, and each class can have its own constructor. This allows each class to define its specific behavior and initialization logic based on its requirements.
+
+Parameterized Constructors: Constructors can also accept parameters to initialize object properties with specific values. This allows you to customize the initialization process by passing different arguments when creating an object.

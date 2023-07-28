@@ -1,0 +1,9 @@
+Q.9 What’s the difference between html tag and attribute and give example of some global attributes?
+
+Ans.  The HTML tag defines the type and purpose of an HTML element, while an attribute provides additional information or behavior to the element.
+
+--> Some of the global attributes are:
+a. class
+b. id
+c. lang
+d. style

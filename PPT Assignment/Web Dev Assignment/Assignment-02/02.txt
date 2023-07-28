@@ -1,0 +1,22 @@
+Q.2 What are the Different Types of Selectors in CSS & what are the advantages of them?
+
+Ans. CSS selectors are powerful tools that allow us to target specific elements on a web page and apply styles to them. Some of the different types of selectors in CSS:
+
+a. Element Selector: Selects elements based on their tag name. For example, p selects all <p> elements.
+Advantages: Applies styles to all matching elements.
+
+b. Class Selector: Selects elements based on the value of their class attribute. For example, .container selects all elements with class="container".
+Advantages: Allows for targeting specific groups of elements with shared styles.
+
+c. ID Selector: Selects a single element based on its unique ID attribute value. For example, #header selects the element with id="header".
+Advantages: Enables precise targeting of individual elements, useful for unique styling or JavaScript manipulation.
+
+d. Attribute Selector: Selects elements based on the presence or value of an attribute. For example, [type="submit"] selects all elements with type="submit". Advantages: Offers flexibility in targeting elements with specific attribute conditions.
+
+Descendant Selector: Selects elements that are descendants of another element. For example, div p selects all <p> elements that are descendants of <div> elements. 
+Advantages: Allows for targeting specific elements within a particular context.
+
+Pseudo-class Selector: Selects elements based on a specific state or condition. For example, a:hover selects all <a> elements when they are being hovered over. Advantages: Enables styling based on user interactions or element states like hover, focus, or visited.
+
+Pseudo-element Selector: Selects a specific part or section of an element. For example, p::first-line selects the first line of all <p> elements.
+Advantages: Allows for styling specific parts of an element, such as the first letter or first line.

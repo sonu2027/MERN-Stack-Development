@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <style>
+        .linear-grad{
+            height: 300px;
+            width: 500px;
+            background-image: linear-gradient(to right, orange,white,green);
+        }
+        .repeating-linear-grad{
+            height: 300px;
+            width: 500px;
+            background-image: repeating-linear-gradient( orange, white, green);
+        }
+        .radial-grad{
+            height: 300px;
+            width: 500px;
+            background-image: radial-gradient(circle, orange, white, green);
+        }
+        .repeating-radial-grad{
+            height: 300px;
+            width: 500px;
+            background-image: repeating-radial-gradient(orange 10%, white 15%, green 20%);
+        }
+        .conic-grad{
+            height: 300px;
+            width: 500px;
+            background-image: conic-gradient(orange 120deg, green);
+        }
+    </style>
+</head>
+<body>
+    <div class="linear-grad"></div>
+    <div class="repeating-linear-grad"></div>
+    <div class="radial-grad"></div>
+    <div class="repeating-radial-grad"></div>
+    <div class="conic-grad"></div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+Q.3 How to pass data from one component to another component
+
+Ans. 
+In React, you can pass data from one component to another component using props. Props (short for "properties") are a mechanism for passing data from a parent component to its child components. This allows you to share data and communicate between different parts of your application.
+
+Here's how you can pass data from a parent component to a child component using props:
+Step 1: Parent Component
+Define the data you want to pass as a prop in the parent component. Let's assume you have a parent component called ParentComponent, and you want to pass the  dataToPass variable to its child component.
+
+Step 2: Child Component
+In the child component, receive the prop passed from the parent component and use it as needed. In this case, the ChildComponent receives the data prop.

@@ -1,0 +1,3 @@
+Q.8 What is the difference between <figure> tag and <img> tag?
+
+Ans . In short, the <img> tag is specifically for embedding images, while the <figure> tag is used to group self-contained content, such as images, along with their associated captions or descriptions.

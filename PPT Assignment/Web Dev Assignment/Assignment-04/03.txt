@@ -1,0 +1,2 @@
+Q.3 Difference between var & let?
+Ans. The main difference between var and let is that the var variable is scope is globally and the let variable scope is only in the function (between curly brackets {}) that means the the scope of let variable is only in the function.

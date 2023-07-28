@@ -1,0 +1,37 @@
+<!-- 2. Create a app where you have an input box and whenever a user types something in the input box and hits submit it should be added on the webpage below the input box -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box">
+      <input id="input" type="text"/>
+      <button id="button">Submit</button>
+    </div>
+
+    <!-- <script>
+      let a = document.getElementsByTagName("button");
+      let b = document.getElementsByTagName("input");
+      a[0].addEventListener("click", likhdo);
+      function likhdo() {
+        document.write(b[0].value);
+      }
+    </script> -->
+    <script>
+      let a = document.getElementById("button");
+      let b = document.getElementById("input");
+      a.addEventListener("click", likhdo);
+      function likhdo() {
+        const para = document.createElement("p");
+        const node = document.createTextNode(b.value);
+        para.appendChild(node);
+        const element = document.getElementById("box");
+        element.appendChild(para);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+    <style>
+        .item{
+            width: 100%;
+            height: 42vh;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+            
+            border-radius: 1rem;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            justify-items: center;
+            gap: 1rem 1rem;
+            width: 90vw;
+            margin-left: 4%;
+        }
+        @media screen and (max-width:600px){
+            .container{
+                display: flex;
+                flex-direction: column;
+                width: 65vw;
+                margin-left: 17%;
+            }
+            .item{
+                width: 100%;
+                height: 50vh;
+            }
+            img{
+                height: 100%;
+                width: 100%;
+                border-radius: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="./Assets/img1.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./Assets/mountain.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./Assets/river.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./Assets/waterfall.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./Assets/sky.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="./Assets/river.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

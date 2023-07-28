@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    background-color: #edf1fd;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    background-color: rgb(10, 125, 75);
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+.logo:hover{
+    background-color: #fff;
+    cursor: pointer;
+}
+.name{
+    font-size: 20px;
+    font-weight: 500;
+}
+nav{
+    margin-top: 25px;
+    display: flex;
+}
+.left-side-nav{
+    width:10%;
+    display: flex;
+    margin-left: 160px;
+    column-gap:10px;
+    align-items: center;
+}
+li{
+    list-style: none;
+    font-weight: 500;
+    font-size: 20px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    background-color: #edf1fd;
+    color: royalblue;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.right-side-nav{
+    width: 70%;
+    display: flex;
+    column-gap: 60px;
+    align-items: center;
+} 
+main{
+    display: flex;
+    margin-top: 150px;
+    justify-content: space-around;
+    align-items: center; 
+}
+.image{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+img{
+    height: 180px;
+    width: 170px;
+    border-radius: 12px;
+}
+h1{
+    font-size: 50px;
+}
+p{
+    font-weight: 400;
+}
+button{
+    border-radius: 5px;
+    color: #edf1fd;
+    background-color: rgb(10, 125, 75);
+    padding: 5px 8px;
+    border: 1px solid rgb(10, 125, 75);
+    margin-top: 10px;
+    font-weight: 500;
+}
+button:hover{
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+Q.7 How do you handle conditional rendering in React?
+
+Ans. 
+1.Using if/else Statements:
+You can use regular JavaScript if/else statements within the render method of your component to conditionally render different components or content based on certain conditions.
+
+2. Using Ternary Operator:
+The ternary operator is a shorthand way to conditionally render elements in React. It is often used when you have a simple true/false condition.
+
+3. Using Logical && Operator:
+The logical AND (&&) operator can be used for simple conditional rendering where you want to render a component based on a condition.
+
+4. Using if Condition Before the Return:
+In functional components, you can use regular JavaScript if statements before the return statement for more complex conditional rendering logic.
+
+5. Using Switch Statement:
+For multiple conditions, you can use a switch statement before the return statement to handle various rendering scenarios.

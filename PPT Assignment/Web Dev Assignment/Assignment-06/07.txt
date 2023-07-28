@@ -1,0 +1,14 @@
+Q.7  Whats Inheritance and Purpose of it?
+
+Ans. Inheritance is a fundamental concept in object-oriented programming that allows a class to inherit properties and behaviors from another class. It enables code reuse, promotes hierarchical organization, and facilitates the creation of specialized classes based on existing ones.
+
+Purpose:
+a. Code Reusability: Inheritance promotes code reuse by allowing subclasses to inherit properties and behaviors from a superclass. Instead of rewriting code, you can define common attributes and methods in the superclass and have multiple subclasses inherit and extend them. This reduces redundancy, improves maintainability, and enhances the overall structure of the code.
+
+b. Hierarchical Organization: Inheritance facilitates hierarchical organization of classes. It allows you to create a class hierarchy with a superclass at the top and multiple levels of subclasses below. This helps organize related classes based on their shared characteristics and promotes a clear and logical structure in the codebase.
+
+c. Specialization and Customization: Inheritance enables the creation of specialized classes that inherit from a more general superclass. Subclasses can add additional attributes and methods or override existing ones to provide specialized behavior. This allows for customization and flexibility, as subclasses can tailor the inherited functionality to meet specific requirements while inheriting the shared characteristics from the superclass.
+
+d. Polymorphism: Inheritance is closely related to polymorphism. Subclasses can be treated as instances of the superclass, allowing for the substitution of objects and the use of a common interface. This promotes flexibility in code design, as code that operates on the superclass can also work seamlessly with any subclass that inherits from it.
+
+e. Code Extensibility and Maintainability: Inheritance improves code extensibility and maintainability. When changes or updates are needed, modifying the superclass automatically affects all its subclasses, ensuring consistency and reducing the effort required for maintenance. It also simplifies code modifications by centralizing common functionality in the superclass.

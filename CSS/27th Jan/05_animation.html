@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        div{
+            background-color: red;
+            height: 80px;
+            width: 120px;
+            animation: colorchange;
+            animation-duration: 10s;
+            animation-delay: 3s;
+            position: relative;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+        #ease{
+            animation-timing-function: ease;
+        }
+        #linear{
+            animation-timing-function: linear;
+        }
+        #ease-in{
+            animation-timing-function: ease-in;
+        }
+        #ease-out{
+            animation-timing-function: ease-out;
+        }
+        #ease-in-out{
+            animation-timing-function: ease-in-out;
+        }
+        @keyframes colorchange{
+            from{
+                background-color: blue;
+                top: 0px;
+                left: 0px;
+            }
+            to{
+                background-color: yellow;
+                top: 0px;
+                left: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="ease">Ease</div>
+    <div id="linear">Linear</div>
+    <div id="ease-in">Ease-in</div>
+    <div id="ease-out">Ease-out</div>
+    <div id="ease-in-out">Ease-in-out</div>
+    <p>This is going to animate</p>
+</body>
+</html>

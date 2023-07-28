@@ -1,0 +1,3 @@
+Q.5 What is the purpose of the orientation media feature?
+
+Ans. The orientation CSS media feature can be used to test the orientation of the viewport

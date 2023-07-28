@@ -1,0 +1,13 @@
+Q.4 What is the use of MongoDB?
+
+Ans. The primary use of MongoDB is to store and manage data in a flexible, scalable, and high-performance manner. Some of the key use cases and advantages of MongoDB include:
+
+1. Document Storage: MongoDB stores data in JSON-like BSON (Binary JSON) format, allowing it to handle complex and hierarchical data structures with ease. It is well-suited for storing semi-structured and nested data, making it ideal for applications with rapidly changing data schemas.
+
+2. Scalability and Performance: MongoDB is designed to be horizontally scalable, allowing it to distribute data across multiple servers and clusters. This horizontal scaling enables high read/write throughput and performance, making it suitable for large-scale applications with high traffic and data volumes.
+
+3. Flexibility: MongoDB's flexible schema allows you to add or modify fields to documents without requiring a predefined schema, which can be beneficial for agile development and handling evolving data requirements.
+
+4. Real-Time Data: MongoDB's fast read and write operations, combined with its ability to handle large datasets, make it well-suited for real-time applications such as real-time analytics, gaming, and IoT (Internet of Things) applications.
+
+Hence, there are so many advantages of MongoDB, that's why we use MongoDB

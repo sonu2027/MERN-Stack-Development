@@ -1,0 +1,7 @@
+Q.5 How is Border-box different from Content Box?
+
+Ans. In short, the main difference between the border-box and content-box values of the box-sizing property in CSS is as follows:
+
+content-box (default): The width and height of an element do not include padding or border. They only account for the content size.
+
+border-box: The width and height of an element include both the content and any padding or border. The specified dimensions remain constant, and padding and border are included within those dimensions.

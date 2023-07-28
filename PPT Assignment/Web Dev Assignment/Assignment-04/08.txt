@@ -1,0 +1,14 @@
+Q.8 How can you destructure objects and arrays in ES6?
+
+Ans. 
+Example: 
+var arr = ["Hello", "World"]  
+  
+// destructuring assignment  
+var [first, second] = arr;  
+  
+console.log(first);   
+console.log(second);  
+Output:
+Hello
+World

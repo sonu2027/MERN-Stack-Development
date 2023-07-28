@@ -1,0 +1,11 @@
+Q.6 What are Promises & Explain Some Three Methods of Promise
+
+Ans. Promises are objects in JavaScript that represent the eventual completion or failure of an asynchronous operation and allow you to handle the result asynchronously. They provide a cleaner and more structured approach compared to traditional callback-based handling of asynchronous code.
+
+Promises have several methods available to handle asynchronous operations:
+a. then(): The then() method is used to handle the fulfilled state of a Promise. It takes two optional callback functions as arguments: onFulfilled and onRejected. The onFulfilled callback is executed when the Promise is fulfilled, receiving the fulfillment value as its argument. The onRejected callback is executed when the Promise is rejected, receiving the rejection reason as its argument.
+
+b. catch(): The catch() method is used to handle the rejected state of a Promise. It is a shorthand for handling errors and is equivalent to using .then(undefined, onRejected). It allows you to specify a callback function to be executed when the Promise is rejected.
+
+c. finally(): The finally() method is used to specify a callback function that will be executed when the Promise settles, regardless of whether it is fulfilled or rejected. This method is useful for performing cleanup or finalizing tasks that need to be executed regardless of the Promise's outcome.
+

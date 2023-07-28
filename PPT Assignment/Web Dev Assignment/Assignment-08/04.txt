@@ -1,0 +1,13 @@
+Q.4 Whats component? Types of component
+
+Ans. In the context of front-end web development, a component is a reusable and self-contained building block that encapsulates a specific piece of user interface (UI) functionality. Components help in structuring the UI into smaller, manageable parts, making it easier to develop, test, and maintain complex web applications.
+
+Types of Components:
+A. Functional Components (a.k.a. Stateless Components):Functional components are simple, pure functions that accept props (short for properties) as input and return the UI elements to be rendered. They don't have their own state and are mainly used for rendering UI based on the provided data.
+
+B.Class Components (a.k.a. Stateful Components): Class components are ES6 classes that extend a base component class provided by the framework or library. They can manage their own state and have additional lifecycle methods, making them more suitable for handling complex logic and stateful behavior.
+
+C. Pure Components:Pure components are a variation of class components that automatically optimize the rendering process. They implement a shouldComponentUpdate method that performs a shallow comparison of the props and state to determine whether the component needs to be re-rendered. If the props and state haven't changed, the rendering is skipped, improving performance.
+
+D.Higher-Order Components (HOCs):Higher-Order Components are advanced components that wrap other components to provide additional functionality or behavior. They allow for code reuse and the separation of concerns. HOCs are commonly used for tasks like authentication, logging, and code sharing.
+These are some of the most common types of components used in front-end web development. Depending on the framework or library you are using, the terminology and implementation may vary, but the core concept of components remains consistent across these technologies.

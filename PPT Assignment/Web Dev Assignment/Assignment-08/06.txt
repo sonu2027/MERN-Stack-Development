@@ -1,0 +1,31 @@
+Q.6 Explain react component life cycle 
+
+Ans. 
+1. Mounting Phase: 
+A. constructor(props): The constructor is called when the component is being initialized and before it is mounted. It's used for initializing state and binding event handlers.
+
+B. static getDerivedStateFromProps(props, state): This method is rarely used, but it can be used to update the state based on changes in props before rendering. It returns an object to update the state or null to indicate no state update is necessary.
+
+C. render(): The render method is responsible for returning the JSX (UI) elements to be rendered on the screen. It must be a pure function without causing side effects.
+
+D. componentDidMount(): This method is called immediately after the component is mounted (added to the DOM). It's often used for making API calls or setting up subscriptions.
+
+
+
+2. Updating Phase:
+A. static getDerivedStateFromProps(props, state): As mentioned earlier, this method can also be used in the updating phase to update the state based on changes in props before re-rendering.
+
+B. shouldComponentUpdate(nextProps, nextState): This method allows you to optimize rendering performance by determining if the component should re-render or not. It returns a boolean value indicating whether the update should occur or not.
+
+C. render(): The render method is called again to update the UI with new data.
+getSnapshotBeforeUpdate(prevProps, prevState): This method allows you to capture information from the DOM before it gets changed due to the update. It returns a snapshot value, which can be used in componentDidUpdate.
+
+D. componentDidUpdate(prevProps, prevState, snapshot): This method is called after the component is updated and re-rendered. It's commonly used for side effects, such as updating the DOM based on changes.
+
+
+
+3. Unmounting Phase:
+A. componentWillUnmount(): This method is called just before the component is removed from the DOM. It's often used for performing cleanup tasks like canceling subscriptions or clearing timers.
+Error Handling Phase:
+
+B.componentDidCatch(error, info): This method is used for error handling within components. It's called when there's an error during rendering, in a lifecycle method, or in the constructor of any child component.

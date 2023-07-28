@@ -1,0 +1,2 @@
+Q.5 What is the difference between let and const ?
+Ans. The main difference between let and const is that with the let variable we can update the value of variable (it can be int, string, float tec) but the const initialize only one time after that it cannot be updated.

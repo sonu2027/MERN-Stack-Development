@@ -1,0 +1,9 @@
+Q.7 What’s difference between map & forEach?
+
+Ans. 
+For each: 
+--> The forEach() method does not returns a new array based on the given array.
+--> The forEach() method returns “undefined“.
+map:
+--> The map() method returns an entirely new array.
+--> The map() method returns the newly created array 

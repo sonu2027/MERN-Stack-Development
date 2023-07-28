@@ -1,0 +1,12 @@
+Q.8 Whats Encapsulation and Purpose of it ?
+
+Ans. Encapsulation is a fundamental concept in object-oriented programming that combines data and methods into a single unit called an object. It involves bundling the data (attributes or properties) and the methods (behaviors or functions) that operate on that data within a class. Encapsulation provides data abstraction and information hiding, ensuring that the internal implementation details are hidden from the outside and accessible only through a defined interface.
+
+Purpose:
+a. Data Abstraction: Encapsulation allows you to define a class that represents a concept or entity, hiding the internal implementation details of how the data is stored or processed. It focuses on what the object does (behavior) rather than how it does it (implementation). Encapsulation provides a clean and simplified interface to interact with the object, hiding the complexity and making the code more readable and maintainable.
+
+b. Information Hiding: Encapsulation hides the internal details and state of an object, protecting it from unauthorized access or modification. By defining public, private, and protected access modifiers, encapsulation allows controlled access to the object's data and methods. It prevents external code from directly accessing or modifying the object's internal state, enforcing data integrity and reducing the risk of accidental data corruption or misuse.
+
+c. Modularity and Maintainability: Encapsulation promotes modularity by organizing related data and methods within a class. It enables code to be developed, tested, and maintained independently, improving code organization and scalability. Encapsulated classes can be modified or extended without affecting other parts of the codebase, leading to easier maintenance and reducing the impact of changes.
+
+d. Code Reusability: Encapsulation supports code reusability by allowing objects of the same class to be created and used in different parts of the codebase. Encapsulated classes provide a self-contained unit that can be instantiated and used wherever needed. By encapsulating related data and behaviors within a class, you can create reusable components that can be easily incorporated into different projects or scenarios.

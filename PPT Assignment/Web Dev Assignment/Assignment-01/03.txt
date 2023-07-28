@@ -1,0 +1,5 @@
+Q.3 Differentiate between HTML Tags and Elements?
+
+Ans. HTML Tags: Markup characters used to define the structure and formatting of content within an HTML document. Examples: <p>, <br>, <div>, <main>, <img> etc.
+
+HTML Elements: combination of tags and content is said to HTML elements.

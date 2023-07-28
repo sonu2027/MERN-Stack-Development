@@ -1,0 +1,5 @@
+Q.5  What is Mongoose and how does it relate to MongoDB?
+
+Ans. Mongoose is an Object-Data Modeling (ODM) library for Node.js that provides a higher-level abstraction and a schema-based approach to interact with MongoDB databases. It is designed to work with MongoDB and simplifies the process of defining and working with data models in Node.js applications.
+
+In MongoDB, data is stored in the form of documents (JSON-like BSON format), and each document can have its own structure. While MongoDB is a schema-less database, Mongoose introduces a schema, allowing you to define the structure of your data in a more organized and consistent way.

@@ -1,0 +1,3 @@
+Q.3 What are REST API ?
+
+Ans. REST (Representational State Transfer) API is an architectural style and a set of constraints for designing networked applications. It stands for "Representational State Transfer," and it was introduced by Roy Fielding in his Ph.D. dissertation in 2000. RESTful APIs use HTTP as the communication protocol and follow certain principles to create scalable and stateless web services.

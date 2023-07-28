@@ -1,0 +1,20 @@
+Q.1 What’s difference between Synchronous and Asynchronous?
+Ans. 
+Synchronous:
+Timing: In synchronous operations, tasks are executed one after another in a sequential manner, following a specific order and timeline.
+
+Blocking: Synchronous operations are typically blocking, meaning that the execution of a task will pause until it receives a response or completion signal from the previous task. This can lead to delays and inefficiencies if one task takes a long time to complete.
+
+Real-time interaction: Synchronous communication requires both the sender and receiver to be actively engaged at the same time. It's similar to a real-time conversation where immediate responses are expected.
+
+Dependency: Synchronous operations often have dependencies on each other. The execution of subsequent tasks relies on the completion of preceding tasks.
+
+
+Asynchronous:
+Timing: In asynchronous operations, tasks are executed independently of one another, without strict adherence to a specific order or timeline. They can start and finish at different times.
+
+Non-blocking: Asynchronous operations are typically non-blocking, meaning that a task can continue its execution without waiting for the completion of a previous task. This allows for better utilization of resources and avoids unnecessary delays.
+
+Delayed interaction: Asynchronous communication doesn't require immediate responses. Tasks can be initiated and completed independently, with the ability to handle multiple tasks simultaneously.
+
+Callbacks or notifications: Asynchronous operations often involve callbacks or notifications to inform the requesting entity when a task is completed. This allows the program to continue its execution and handle the result once it becomes available.

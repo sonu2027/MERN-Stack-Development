@@ -1,0 +1,16 @@
+Q.5 Whats Abstraction and Its Purpose?
+
+Ans. Abstraction is a fundamental concept in object-oriented programming that involves simplifying complex systems by representing only the essential features and hiding unnecessary details from the outside world. It allows programmers to focus on high-level concepts and create reusable models.
+
+Purpose:
+a. Simplification and Modularity: Abstraction allows programmers to create simplified models of complex systems. By hiding irrelevant details and focusing on essential features, it simplifies the understanding and implementation of those systems. This promotes modularity and separates the high-level concepts from the implementation details.
+
+b. Data and Behavior Representation: Abstraction focuses on representing the relevant data and behaviors of objects or systems, while hiding the internal implementation details. It allows you to define the essential attributes and methods that capture the core functionality of an object or a class, without exposing the internal mechanisms.
+
+c. Encapsulation and Information Hiding: Abstraction goes hand in hand with encapsulation, which is the bundling of data and methods within a class. By encapsulating data and behavior, abstraction provides a clear boundary between the external interface and the internal implementation, hiding unnecessary details and protecting the integrity of the data.
+
+d. Code Reusability: Abstraction promotes code reusability by creating abstract classes, interfaces, and design patterns. Abstract classes define common attributes and methods that can be inherited by subclasses. Interfaces define contracts for implementing specific behaviors. By using these abstractions, you can create reusable code that can be extended and implemented by different classes.
+
+e. Focus on Higher-Level Concepts: Abstraction allows programmers to focus on high-level concepts and problem-solving rather than getting lost in the implementation details. It provides a level of abstraction that matches the problem domain and allows for better understanding, communication, and collaboration among team members.
+
+f. Maintenance and Adaptability: Abstraction makes code easier to maintain and adapt. By separating the essential features from implementation details, changes or updates in one part of the system do not affect other parts as long as the external interface remains the same. This promotes flexibility, scalability, and ease of maintenance.

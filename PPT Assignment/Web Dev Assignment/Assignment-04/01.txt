@@ -1,0 +1,33 @@
+Q.1 Explain Hoisting in JavaScript
+
+Ans. Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their respective scopes during the compilation phase, before the code is executed. This means that regardless of where variables and functions are declared in the code, they are treated as if they are declared at the beginning of their containing scope.
+
+In JavaScript, when the code is executed, it goes through two phases: the compilation phase and the execution phase. During the compilation phase, the JavaScript engine scans through the code and hoists all variable and function declarations to the top of their containing scope. Only the declarations are hoisted, not the initializations or assignments.
+
+Example 1: Variable Hoisting
+
+console.log(x); // Output: undefined
+var x = 5;
+
+In this example, even though the console.log statement appears before the variable x is declared and assigned a value, the code doesn't throw an error. During hoisting, the declaration var x; is moved to the top, which is why it doesn't result in a reference error. 
+
+Example 2: Function Hoisting
+
+foo(); // Output: "Hello"
+
+function foo() {
+  console.log("Hello");
+}
+In this example, the foo function is called before its actual declaration in the code. However, due to hoisting, the function declaration is moved to the top, allowing the code to execute without errors.
+
+
+Example 3: Function Expression Hoisting
+
+bar(); // Error: bar is not a function
+
+var bar = function() {
+  console.log("Hello");
+};
+In this example, the code throws an error because function expressions are not hoisted. The variable bar is hoisted, but its assignment to the function doesn't occur until later in the code. Therefore, when the function call bar() is encountered before the assignment, it results in an error.
+
+To avoid confusion and potential issues related to hoisting, the good practice to declare variables at the beginning of their scope and define functions before using them in the code. This makes the code more readable and helps prevent unexpected behaviors caused by hoisting.

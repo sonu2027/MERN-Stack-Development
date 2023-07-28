@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo element selector</title>
+    <style>
+        .class1::first-line{
+            color: red;
+        }
+        .class2::first-letter{
+            color: aqua;
+            background-color: red;
+        }
+        .class3::after{
+            content: "sonu";
+            color: #808080;
+        }
+        .class4::before{
+            content: "sonu";
+            color: #808080;
+        }
+        .class5::selection{
+            background-color: yellow;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- first-line -->
+    <p class="class1">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. At dolores, dolorem in doloribus commodi optio quisquam ipsam aut. Recusandae aut repudiandae eaque eligendi maxime ullam neque sapiente animi incidunt vitae?
+    </p>
+    
+    <p class="class2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, cupiditate!
+    </p>
+
+    <p class="class3">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, aliquam.
+    </p>
+    <p class="class4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, sed?
+    </p>
+
+    <p class="class5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere repudiandae aperiam ipsa voluptate quas ducimus veritatis id esse, aut, hic voluptatum? Alias rem eaque corrupti voluptatem optio ullam necessitatibus laborum.
+    </p>
+</body>
+</html>

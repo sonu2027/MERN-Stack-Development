@@ -1,0 +1,63 @@
+<!-- 2. Create a form with basic validation (name, email, phone number, password, age, gender, date, color picker) -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        form{
+            margin: 5rem 0 0 30rem;
+            border: 1px solid black;
+            width: 18rem;
+            padding: 3rem;
+        }
+        form #submit{
+            margin-left: 8rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="checkPhNo()">
+        <label for="">First name:</label>
+        <input type="text"><br><br>
+        <label for="">Last name:</label>
+        <input type="text"><br><br>
+        <label for="">Email:</label>
+        <input type="email" name="" id=""><br><br>
+        <label for="">Phone no:</label>
+        <input type="text" name="" id="no"><br><br>
+        <label for="">password:</label>
+        <input type="password" name="" id=""><br><br>
+        <label for="">Age:</label>
+        <input type="number" name="" id=""><br><br>
+        <label for="">Gender:</label>
+        <label for="">Male</label>
+        <input type="radio" name="gender" id="">
+        <label for="">Female</label>
+        <input type="radio" id="" name="gender"><br><br>
+        <label for="">date:</label>
+        <input type="date" name="" id=""><br><br>
+        <label for="">Color picker:</label>
+        <input type="color" name="" id=""><br><br>
+        <input id="submit" type="submit" value="Submit" >
+
+    <script>
+        function checkPhNo(){
+        let phNo=document.getElementById("no")
+        let no=phNo.value
+        let count=0;
+        for(i in no){
+            count++
+        }
+        if(count!=10){
+            alert("Phone number should have 10 number")
+        }
+        }
+    </script>
+
+    </form>
+</body>
+</html>

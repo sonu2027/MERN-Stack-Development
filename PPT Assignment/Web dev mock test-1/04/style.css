@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 140%;
+}
+.button img{
+    height: 1.3rem;
+    width: 1.3rem;
+}
+header{
+    display: flex;
+    margin: 1rem 2rem;
+    justify-content: space-between;
+}
+.button{
+    display: flex;
+    /* border: 1px solid red; */
+    width: 18%;
+    justify-content: space-around;
+    align-items: center;
+}
+button:hover{
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    /* border: 1px solid black; */
+    width: 28%;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+ul li a:hover{
+    text-decoration: underline;
+    text-decoration-color: royalblue;
+}
+#signup{
+    background-color: yellow;
+}
+.logo img{
+    height: 2rem;
+    width: 2rem;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+/* main */
+main{
+    display: flex;
+    justify-content: space-around;
+    margin: 0rem 2rem;
+}
+.left-side-main img{
+    height: 22.5rem;
+    width: 30rem;
+}
+.right-side-main{
+    margin-top: 6rem;
+}
+button{
+    height: 1.5rem;
+    width: 3.5rem;
+    border-radius: 0.9rem;
+    border: 1px solid black;
+}
+.right-side-main button{
+    background-color: yellow;
+}
+
+/* Footer */
+footer{
+    font-size: 70%;
+    background-color: rgba(11, 11, 11, 0.967);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.2rem;
+}
+footer p{
+    margin-left: 1rem;
+    color: white;
+}
+footer .footerKaButton{
+    margin-right: 3rem;
+}
+.footerKaButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerKaButton button{
+    border-radius: 0.1rem;
+    width: 8rem;
+    border: 1px solid white;
+    background-color: rgba(11, 11, 11, 0.967);
+    color: white;
+}
+footer img{
+    height: 0.7rem;
+    width: 0.7rem;
+    margin-left: 0.5rem;
+}
+footer img:hover{
+    cursor: pointer;
+}

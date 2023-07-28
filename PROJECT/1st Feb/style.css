@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: boder-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: #edf1fd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+button{
+    background-color: rgb(18,155,155);
+    color: white;
+    cursor: pointer;
+    padding: 4px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: 600;
+    width: fit-content;
+}
+button:hover{
+    background-color: #fff;
+    color: black;
+    border: 1px solid black; 
+}
+nav{
+    display:flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+}
+nav ul{
+    display: flex;
+    font-weight: 500;
+}
+nav ul li{
+    font-size: 20px;
+}
+nav ul li:hover{
+    text-decoration: underline;
+    font-weight: 1200;
+    font-size: 25px;
+}
+nav .logo{
+    font-size: 50px;
+    font-weight: 600;
+}
+input{
+    padding: 4px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.left-side-main h1{
+    font-size: 45px;
+    font-weight: 800px;
+    margin-bottom: 20px;
+}
+h1 span{
+    color: rgb(18,155,155);
+    font-weight: 9000;
+    font-size: 3rem;
+}
+p{
+    font-size: 25px;
+}
+p span{
+    color: rgb(18,155,155);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+.right-side-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.right-side-main img{
+    height: 200px;
+    width: 200px;
+}
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+}
+footer p{
+    font-weight: 600;
+}
+footer ul{
+    display: flex;
+    gap: 30px;
+}

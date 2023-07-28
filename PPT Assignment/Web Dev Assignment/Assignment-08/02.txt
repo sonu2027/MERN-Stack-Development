@@ -1,0 +1,5 @@
+Q.2 What do you understand by Virtual Dom?
+
+Ans. The Virtual DOM (Document Object Model) is a concept used in the React JavaScript library to improve the efficiency of updating the user interface (UI) of web applications. It acts as a lightweight copy of the actual DOM, which is the hierarchical representation of HTML elements that a web page consists of.
+
+When you create a UI using React, you define a hierarchy of React components that represent different parts of the UI. Each component has its own state, which is a data representation of the UI at a particular point in time. When the state of a component changes, React needs to update the actual DOM to reflect these changes and render the updated UI on the screen.

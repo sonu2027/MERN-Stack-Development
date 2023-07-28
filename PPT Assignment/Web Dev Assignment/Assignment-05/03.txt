@@ -1,0 +1,19 @@
+Q.3 Explain SetTimeOut and setInterval ?
+
+Ans. setTimeout:
+The setTimeout function is used to execute a specified block of code once, after a specified delay. It takes two parameters: a function to be executed and a delay time in milliseconds. After the specified delay, the function is called and executed.
+
+Example usage of setTimeout: 
+setTimeout(function() {
+  console.log("Message will be displayed after 2 seconds.");
+}, 2000);
+
+
+setInterval:
+The setInterval function is used to repeatedly execute a specified block of code at a fixed interval. It takes two parameters: a function to be executed and a time interval in milliseconds. The function is executed repeatedly until it is stopped or the page is unloaded.
+
+Example usage of setInterval:
+setInterval(function() {
+  console.log("Message will be displayed every 5 seconds.");
+}, 5000);
+

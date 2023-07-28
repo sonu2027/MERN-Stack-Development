@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+.char{
+   height: 40px;
+   border: 1px solid white;
+   position: relative;
+   right: 110px;
+}
+.logo img{
+    width: 100px;
+}
+header{
+    /* border: 1px solid red; */
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 100px;
+    padding: 14px 0;
+}
+li{
+    list-style: none;
+}
+ul{
+    position: relative;
+    right: 234px;
+    display: flex;
+    column-gap: 55px;
+    font-weight: 450;
+}
+header .button{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 170px;
+    height: 45px;
+}
+header ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+header ul li a:hover{
+    color: rgb(197, 34, 200);
+    text-decoration: underline;
+    font-weight: 900;
+}
+button{
+    background-color: rgb(197, 34, 200);
+    padding: 8px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid rgb(197, 34, 200);
+}
+button:hover{
+    background-color: #fff;
+    color: indigo;
+    cursor: pointer;
+}
+main{
+    /* border: 1px solid blue; */
+    background-image: url("./assets/background_image.png");
+    background-size: 100% 100%;
+    height: 100vh;
+    width: 100 vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    /* border: 1px solid red; */
+    font-size: 62px; 
+    color: #fff;
+    position: absolute;
+    top: 185px;
+    text-align: center;
+}
+p{
+    /* border: 1px solid green; */
+    color: #fff;
+    position: relative;
+    top: 10px;
+    font-size: 22px; 
+    font-weight: 500;
+}
+main .button{
+    /* border: 1px solid blue;    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 10%;
+    position: relative;
+    top: 45px;
+}
+main .button button{
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 25px;
+}

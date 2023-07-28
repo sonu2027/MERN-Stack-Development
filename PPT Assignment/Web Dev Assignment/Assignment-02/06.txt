@@ -1,0 +1,3 @@
+Q.6 What’s z-index and How does it Function ?
+
+Ans. z-index is like a stack. z-index in css allow us to hide the element with other other element by increasing the stack value by number like 1,2,3 etc. Which element have higher the value of z-index will appear on the screen. The default vale of z-index is 0.
