@@ -1,0 +1,25 @@
+<!-- 21. TODO App
+Create a simple to-do app to add TODO items to the list through an input field and a button. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do web app</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter you task">
+    <button onclick="addtask()">Add Task</button>
+
+    <script>
+        let input=document.getElementsByTagName("input")
+        let button=document.getElementsByTagName("button")
+        function addtask(){
+            let newelement=document.createElement("h2")
+            newelement.innerText=input[0].value
+            document.body.appendChild(newelement)
+        }
+    </script>
+</body>
+</html>

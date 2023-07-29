@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrow key</title>
+    <style>
+      #item {
+        height: 10rem;
+        width: 12rem;
+        background-color: royalblue;
+      }
+      #container {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="item"></div>
+    </div>
+
+    <script>
+      let item = document.getElementById("item");
+      document.addEventListener("keydown", function (event) {
+        if (event.key == "ArrowLeft") {
+          item.style.marginRight = "40vw";
+        }
+        if (event.key == "ArrowUp") {
+          item.style.marginBottom = "40vh";
+        }
+        if (event.key == "ArrowRight") {
+          item.style.marginLeft = "40vw";
+        }
+        if (event.key == "ArrowDown") {
+          item.style.marginTop = "40vh";
+        }
+      });
+    </script>
+  </body>
+</html>
