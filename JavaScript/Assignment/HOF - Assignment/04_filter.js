@@ -12,7 +12,9 @@ let book = [
   { author_name: "Shankar", publicationYear: 1992 }
 ];
 
-let bookAfter2010 = book.filter((element) => element.publicationYear >2010);
+let bookAfter2010 = book.filter((element) =>{
+  return element.publicationYear >2010
+});
 
 for (let i = 0; i < bookAfter2010.length; i++) {
   console.log("Author name: ", bookAfter2010[i].author_name, "Publication year: ", bookAfter2010[i].publicationYear)
