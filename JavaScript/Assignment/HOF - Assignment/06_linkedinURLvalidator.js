@@ -7,3 +7,21 @@ The program should use a regular expression to match valid LinkedIn profile URLs
 that do not follow this format or contain invalid characters. The program should provide clear output messages
 indicating whether each input is a valid LinkedIn profile URL or not. */
 
+let url="https://www.linkedin.com/in/kapil-rijhwani/"
+let regexArr=[/\/\//g, /https:/g, /www.linkedin.com\/in\/\w+/g, /-/g, /\w+/g]
+let count=0
+for(let i=0; i<regexArr.length; i++){
+    let x=regexArr[i].test(url)
+    if(x==false){
+        count=1
+    }
+}
+url=Array.from(url)
+length=url.length-1
+
+if(url[length]!="/"  || count==1){
+    console.log(false);
+}
+else{
+    console.log(true);
+}
