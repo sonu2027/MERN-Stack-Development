@@ -1,0 +1,20 @@
+5. List out the different types of classification in DBMS and explain them in depth.
+
+Ans. In DBMS (Database Management System), databases can be classified based on various criteria. Here are the different types of classification in DBMS:
+
+I) Based on Data Models:
+(a) Relational Databases: In a relational database, data is organized into tables with rows and columns, and relationships between tables are established using keys. This model is widely used due to its simplicity and flexibility, and it is based on the principles of the relational algebra.
+(b) Hierarchical Databases: In a hierarchical database, data is organized in a tree-like structure, where each record has a parent-child relationship. This model is suitable for representing hierarchical data but is less flexible than relational databases.
+(c) Network Databases: Network databases are an extension of hierarchical databases where records can have multiple parent or child records. This model is more complex than hierarchical databases and allows for more flexible relationships between records.
+(d) Object-oriented database: It represent data like the real world enity.
+
+
+II) Based on number of user:
+(a) Signle user databas: It is more like when single database uses a single person
+(b) multiuser database: It is like a one database but uses the multiple user. Eg. Adhar card
+
+
+III) Based on database distribution
+(a) Centralized system: When there will be one database but multiple user, it is called Centralized system
+(b) Distributed system: When multiple database connected with each other with a network, then that type of database is called Distributed database system
+

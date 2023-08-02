@@ -1,0 +1,18 @@
+6. What is the significance of Data modelling and explain the types of data modeling.
+
+Ans. Data modeling is a critical step in the database design process that involves creating a visual representation of the data and its relationships within a database system. It serves as a blueprint for designing the database, ensuring that data is structured, organized, and stored efficiently, allowing for easy retrieval and manipulation.
+
+There are three types of data modeling are There
+I) High level conceptual data models: High-level conceptual data models provide an abstract representation of data requirements, focusing on essential entities and their relationships without getting into implementation details. These models are less concerned with specific attributes and constraints but aim to capture the overall business or application context. 
+
+II) Record based logical data model: A record-based logical data model is a type of data model that represents data in the form of records or tuples. It focuses on defining the structure and relationships of records within a database system. This type of data model is often used as an intermediate step between a high-level conceptual data model and the physical implementation of a database.
+
+There are three type of record based logical data model
+(a) Hierarchical data model: The hierarchical data model is a type of database model that organizes data in a tree-like structure with a single root, where each record has a parent-child relationship. It was one of the earliest data models used in database management systems. 
+
+(b) Network data model: The network data model is a database model that extends the hierarchical model by allowing records to have multiple parent and child relationships, creating a more flexible and interconnected data structure. It was developed as an improvement over the hierarchical model to address some of its limitations
+
+(c) Relational data model: The relational data model is a database model that represents data as tables (relations) consisting of rows (tuples) and columns (attributes). It was developed by Edgar F. Codd in the 1970s and has become the most widely used and accepted model for managing structured data. 
+
+
+III) Physical data model: The physical data model is a detailed representation of the database that defines how the data is physically stored on the underlying hardware, including the file structures, storage devices, indexing techniques, and access paths. It is the last stage in the data modeling process, following the conceptual and logical data models.

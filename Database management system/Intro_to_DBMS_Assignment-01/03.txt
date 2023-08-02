@@ -1,0 +1,14 @@
+3. What is DBMS? What was the need for DBMS?
+
+Ans. DBMS stands for Database Management System. It is software that provides an interface for users and applications to interact with a database. The primary purpose of a DBMS is to manage, store, retrieve, and manipulate data efficiently and securely.
+
+DBMS needs because of -
+i) Data Abstraction: A DBMS abstracts the physical storage details from users and applications, allowing them to interact with the database using high-level queries and commands. This abstraction simplifies data manipulation and shields users from dealing with low-level storage complexities.
+
+ii) Data Security: DBMS provides features like access controls, encryption, and authentication, which enhance data security and protect sensitive information from unauthorized access.
+
+ iii) Data Integrity: File-based systems lack built-in mechanisms to enforce data integrity constraints. There is no easy way to ensure that data follows specific rules or relationships, making it susceptible to corruption and errors.
+
+ iv) Data redundancy: In file-based systems, data is often duplicated across multiple files and applications. This redundancy leads to wasted storage space and increases the risk of inconsistencies and data discrepancies.
+  
+  v) Concurrent Access and Transaction Management: DBMS handles concurrent access to the data by multiple users and applications. It employs transaction management techniques to ensure that multiple operations on the database are executed reliably and consistently, even in the presence of failures or conflicts.

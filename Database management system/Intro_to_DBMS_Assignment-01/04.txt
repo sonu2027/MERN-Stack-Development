@@ -1,0 +1,14 @@
+4. Explain 5 challenges of of file-based storage system which was tackled by DBMS.
+
+The 5 file-based challenges that are tackled by DBMS are-
+
+
+i) Data Security: DBMS provides features like access controls, encryption, and authentication, which enhance data security and protect sensitive information from unauthorized access.
+
+ ii) Data Integrity: File-based systems lack built-in mechanisms to enforce data integrity constraints. There is no easy way to ensure that data follows specific rules or relationships, making it susceptible to corruption and errors.
+
+ iii) Data redundancy: In file-based systems, data is often duplicated across multiple files and applications. This redundancy leads to wasted storage space and increases the risk of inconsistencies and data discrepancies.
+  
+  iv) Limited Data Sharing: File-based systems lack efficient data sharing mechanisms between applications, leading to data silos and difficulties in accessing and sharing data across different parts of an organization. DBMS enables concurrent access to data by multiple users and applications, allowing them to interact with the same data simultaneously while maintaining data integrity and consistency.
+
+  v) Scalability and Performance: As data volume grows in file-based systems, managing and scaling the system can become challenging. Performance may degrade due to the lack of optimization for large-scale data management. DBMS is designed to handle large amounts of data efficiently, optimizing data storage, retrieval, and processing to achieve better scalability and performance.
