@@ -1,0 +1,16 @@
+Q7. What is normalization and what is the need for normalization?
+
+Ans. Normalization is the process of organizing and structuring data in a relational database to reduce data redundancy and dependency, minimize anomalies, and improve data integrity. It involves breaking down a larger table into smaller, related tables and establishing relationships between them. The primary goal of normalization is to create a well-structured database design that facilitates efficient data storage, retrieval, and maintenance.
+
+The need for normalization arises from several factors:
+1. Data Redundancy: Redundant data occurs when the same information is stored in multiple places within a database. This can lead to inconsistencies and inaccuracies if the data is updated in one place but not in others. Normalization helps eliminate redundancy by organizing data into separate tables and linking them through relationships.
+
+2. Data Dependency: Data dependency occurs when changes to one piece of data require changes to other pieces of data. For example, if a customer's address is stored in multiple places, updating the address would require modifying it in all occurrences. Normalization reduces data dependency by structuring data to avoid unnecessary repetition.
+
+3. Update Anomalies: Anomalies occur when database updates result in unexpected or incorrect changes to data. Normalization helps prevent anomalies by ensuring that data is stored logically and consistently. For instance, in a denormalized table, updating a single attribute might lead to unintentional changes in other attributes.
+
+4. Insertion and Deletion Anomalies: Insertion anomalies occur when certain information cannot be added to the database without adding related, but unnecessary, data. Deletion anomalies occur when removing data results in the loss of other related data that should have been retained. Normalization addresses these anomalies by structuring data to represent individual entities and relationships correctly.
+
+5. Data Integrity: Normalization enhances data integrity by reducing the risk of inconsistencies and errors. When data is stored in a well-structured manner, it is less prone to corruption and discrepancies, leading to more reliable and trustworthy information.
+
+6. Optimized Storage: Normalization optimizes storage space by eliminating duplicate data. While it may result in more tables, each table is more compact and contains only the necessary information.

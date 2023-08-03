@@ -1,0 +1,16 @@
+Q9. What are joins and why do we need them?
+
+Ans. Joins in the context of relational databases refer to the process of combining data from two or more tables based on related columns. They are essential operations in SQL (Structured Query Language) and are used to retrieve and present data in a way that reflects the relationships between tables. Joins allow you to work with data distributed across multiple tables as if it were contained in a single table. 
+
+Here's why joins are important and necessary in relational databases:
+1. Data Normalization: One of the key principles of database design is data normalization, which involves organizing data to minimize redundancy and dependency. Normalization often results in breaking down data into multiple related tables. Joins enable you to retrieve and display normalized data in a meaningful way by bringing together information from different tables.
+
+2. Data Integrity: By splitting data into related tables, you can ensure data integrity and avoid duplication of information. For example, instead of storing the same customer address in multiple places, you can have a separate "Customers" table and link it to other relevant tables using joins.
+
+3. Efficient Storage: Joining tables allows you to efficiently store and manage data. Instead of duplicating large amounts of data across tables, you can store data in a more compact form and use joins to retrieve the necessary details when needed.
+
+4. Reduced Data Entry Errors: Using joins, you can update information in one place (a single table) and have it reflected in multiple related tables. This reduces the chances of errors that can occur when updating data redundantly.
+
+5. Complex Queries: Many real-world scenarios require retrieving data from multiple sources to answer complex questions. Joins enable you to perform sophisticated queries that involve data from different tables, such as generating reports, analytics, and business intelligence.
+
+6. Flexibility: Joins provide the flexibility to model and represent complex relationships between entities. This is crucial for scenarios where data has intricate connections, such as tracking product orders with associated customer information.

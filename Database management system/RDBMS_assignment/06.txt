@@ -1,0 +1,13 @@
+Q6. Explain the different types of errors that could arise in a denormalized database.
+
+Ans. In a denormalized database, where data is intentionally combined or duplicated to improve performance or simplify queries, various types of errors can arise due to the lack of data integrity and redundancy. These errors are known as denormalization anomalies. Here are the main types of errors that can occur in a denormalized database:
+
+1. Update Anomalies: Denormalized databases often suffer from update anomalies, where changing a single piece of data in one location results in inconsistencies across other parts of the database. Since data is duplicated in multiple places, updating one occurrence might be missed or forgotten in other occurrences, leading to data discrepancies.
+
+2. Insertion Anomalies: Insertion anomalies occur when it is not possible to add certain data to the database without simultaneously adding unrelated or irrelevant data. In denormalized databases, related data might be bundled together, and inserting new records requires duplicating all associated data, even if it is not entirely relevant to the new record.
+
+3. Deletion Anomalies: Deletion anomalies arise when removing certain data from the database causes unintended loss of other related data. In denormalized databases, if data is duplicated across multiple records and one record is deleted, it can inadvertently delete other occurrences of the same data, leading to data loss.
+
+4. Redundancy Issues: Denormalization introduces data redundancy, meaning the same information is stored in multiple places. This redundancy can lead to inconsistencies if data is updated in one location and not in others, causing data to become out of sync.
+
+5. Inconsistencies and Data Integrity Problems: Due to data duplication, maintaining data integrity becomes challenging in denormalized databases. Inconsistencies can arise when one copy of data is updated correctly, while another copy is not, leading to contradictory information.

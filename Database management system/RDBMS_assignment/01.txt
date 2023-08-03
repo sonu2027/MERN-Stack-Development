@@ -1,0 +1,16 @@
+Q1. What is RDBMS? Why do industries use RDBMS?
+
+Ans. RDBMS stands for Relational Database Management System. It is a type of database management system that stores and manages data in a structured manner using a relational model. In this model, data is organized into tables, which consist of rows and columns. Each row represents a record, and each column represents a specific attribute or field of the data.
+
+Industries use RDBMS for several reasons:
+i) Data Organization and Structure: RDBMS provides a structured way to organize and store data. This structure makes it easier to manage, query, and retrieve data efficiently. The relational model helps maintain data integrity and consistency by defining relationships between tables and enforcing constraints.
+
+II) Data Integrity and ACID Compliance: RDBMS systems adhere to the ACID (Atomicity, Consistency, Isolation, Durability) properties, ensuring data integrity and transaction management. ACID compliance is crucial for applications where data accuracy and reliability are paramount, such as financial systems, healthcare records, and e-commerce platforms.
+
+III) Querying and Reporting: RDBMS systems offer powerful querying capabilities through SQL (Structured Query Language). SQL allows users to write complex queries to retrieve, filter, aggregate, and manipulate data easily. This makes it suitable for generating reports, analytics, and business intelligence.
+
+IV) Scalability: While RDBMS systems might have limitations in handling massive datasets and high transaction rates compared to some NoSQL alternatives, they still offer reasonable scalability for many applications. Many RDBMS systems support clustering, replication, and sharding to distribute data and maintain performance as the application grows.
+
+V) Data Security: RDBMS systems offer various security features, such as user authentication, authorization, and access control mechanisms. This is critical for industries dealing with sensitive data, like personal information, proprietary business data, and confidential records.
+
+VI) Data Relationships: RDBMS excels at representing complex data relationships. This is especially valuable for applications that involve connecting different types of data and analyzing connections, like customer-product relationships, inventory management, and supply chain tracking.

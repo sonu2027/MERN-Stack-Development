@@ -1,0 +1,27 @@
+Q8. List out the different levels of Normalization and explain them in detail.
+
+Ans. There are several levels of normalization, each represented by a normal form. The most common normal forms are:
+
+1. First Normal Form (1NF):
+   - Each table has a primary key that uniquely identifies each record (tuple).
+   - All columns in the table contain atomic values.
+   - No repeating groups or arrays are allowed.
+   - Example: A table with customer information, where each row has a unique customer ID, and each column holds a single piece of information (e.g. name, address, phone).
+
+2. Second Normal Form (2NF):
+   - The table is in 1NF.
+   - All non-key attributes are fully functionally dependent on the entire primary key.
+   - If part of a composite primary key determines other attributes, those attributes are moved to a separate table.
+   - Example: A table with order details, where the order number and product ID together form the primary key. If the product price is determined only by the product ID, it should be moved to a separate "Products" table.
+
+3. Third Normal Form (3NF):
+   - The table is in 2NF.
+   - All non-key attributes are transitively dependent only on the primary key.
+   - No transitive dependencies exist among non-key attributes.
+   - Example: A table with course information, where the course name depends on the instructor's name, but the instructor's name depends on the course department. To achieve 3NF, you would separate instructor information into a different table.
+
+4. Boyce-Codd Normal Form (BCNF):
+   - The table is in 3NF.
+   - Every determinant (attribute that determines another attribute) is a candidate key.
+   - No partial dependencies exist for non-key attributes.
+   - Example: A table with employee information, where the employee ID determines the employee's department and the department manager. To achieve BCNF, you would separate the department manager information into a different table.

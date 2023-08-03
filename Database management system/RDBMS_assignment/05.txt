@@ -1,0 +1,13 @@
+Q5. Write a short note on Single Responsibility Principle.
+
+Ans. The Single Responsibility Principle (SRP) is one of the fundamental principles of object-oriented programming and software design. It is one of the SOLID principles, a set of guidelines that aim to promote clean, maintainable, and robust code. The Single Responsibility Principle states that a class should have only one reason to change or a single responsibility.By adhering to the SRP, several benefits can be achieved:
+
+1. Improved Code Maintenance: When a class has a single responsibility, changes related to that responsibility are confined to that class. This makes it easier to understand, modify, and maintain the codebase. Changes to one aspect of the system are less likely to inadvertently affect other parts.
+
+2. Enhanced Readability: Classes adhering to the SRP tend to be more focused and concise. This makes the codebase more readable and understandable, both for the original developers and for those who work with the code in the future.
+
+3. Reusability: Classes with well-defined responsibilities are more likely to be reusable in different parts of an application or in other projects. Developers can confidently use these classes knowing that their behavior is clearly defined and isolated.
+
+4. Testability: Classes adhering to the SRP are generally easier to test. Since their responsibilities are distinct, unit tests can focus on specific behaviors without being overly complex.
+
+5. Reduced Coupling: When classes have single responsibilities, there is often less interdependence between different parts of the codebase. This reduced coupling can lead to a more modular and flexible architecture.

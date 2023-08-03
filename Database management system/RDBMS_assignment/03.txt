@@ -1,0 +1,19 @@
+Q3. What is the importance of Relationships in a Database management system? Explain the types
+of relationships.
+
+Ans. Relationships in a database management system (DBMS) play a pivotal role in organizing and structuring data, ensuring data integrity, and facilitating efficient data retrieval and analysis. Relationships define how data in different tables are related or connected to each other. They help establish meaningful associations between data entities, allowing for a more comprehensive representation of real-world scenarios.
+
+The types of relationships commonly found in a database:
+
+1. One-to-One (1:1) Relationship:
+   - In a one-to-one relationship, each record in one table is associated with at most one record in another table, and vice versa.
+   - Example: A "Person" table and a "Passport" table. Each person has one passport, and each passport belongs to one person.
+
+2. One-to-Many (1:N) Relationship:
+   - In a one-to-many relationship, a record in one table can be associated with multiple records in another table, but each record in the second table is associated with at most one record in the first table.
+   - Example: A "Customer" table and an "Order" table. Each customer can place multiple orders, but each order is associated with only one customer.
+
+3. Many-to-Many (N:N) Relationship:
+   - In a many-to-many relationship, records in both tables can be associated with multiple records in the other table.
+   - To represent a many-to-many relationship, an intermediary table (also called a junction or associative table) is used. This table contains foreign keys from both related tables and represents the associations between them.
+   - Example: A "Student" table and a "Course" table. Each student can enroll in multiple courses, and each course can have multiple students.

@@ -1,0 +1,9 @@
+Q10. Explain the different types of joins?
+
+Ans. I) Inner Join: An inner join returns only the rows where there is a match between the specified columns in both tables. In other words, it retrieves rows that have corresponding values in both tables. Any rows with non-matching values are excluded from the result set.
+
+II) Left (Outer) Join: A left join returns all the rows from the left (or first) table and the matching rows from the right (or second) table. If there is no match in the right table, the result will contain null values for the columns from the right table.
+
+III) Right (Outer) Join: A right join is similar to a left join but returns all the rows from the right table and the matching rows from the left table. If there is no match in the left table, the result will contain null values for the columns from the left table.
+
+IV) Full (Outer) Join: A full join returns all the rows from both tables, along with the matching rows. If there is no match in either table, the result will contain null values for the columns without a match.
