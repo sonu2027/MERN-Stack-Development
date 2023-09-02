@@ -1,0 +1,10 @@
+.moon-image{
+    width: 40vw;
+    grid-row-end: 10vh;
+}
+#image-id{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
