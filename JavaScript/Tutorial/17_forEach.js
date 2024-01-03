@@ -33,7 +33,7 @@ console.log("check: ", gameScoreCheck);
 
 // find score above 200
 
-const above200 = gameScore.find((score) => score > 200 )
+const above200 = gameScore.find((score) => score > 100 )
 console.log(above200);
 
 // Array.from //Used to create an array from any other object

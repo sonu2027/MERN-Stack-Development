@@ -1,0 +1,6 @@
+1. What is http
+-- http stands for hyper text transfer protocol
+-- used for transmitting data over the internet
+-- http defines how client and server communicate with each other and how request and
+   response should be formatted and transmitted 
+2. node.js http module

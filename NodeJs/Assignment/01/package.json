@@ -1,0 +1,14 @@
+{
+  "name": "node",
+  "version": "1.0.1",
+  "description": "I am creating just for my assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "project"
+  ],
+  "author": "Sonu Mondal",
+  "license": "ISC"
+}

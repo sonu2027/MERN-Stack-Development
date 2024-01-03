@@ -1,0 +1,5 @@
+1. Read files
+2. Write files
+3. Append files
+4. close files
+5. delete files
