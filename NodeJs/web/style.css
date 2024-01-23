@@ -1,0 +1,157 @@
+.bestshoe-container {
+  height: 384px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.left-part {
+  height: 100%;
+  background: rgb(255, 255, 255);
+  width: 79%;
+  box-shadow: 0px 0px 5px black;
+}
+
+.right-part {
+  height: 100%;
+  background: #fcfcfc;
+  width: 19%;
+  padding: 0.1rem;
+  box-shadow: 0px 0px 5px black;
+}
+
+.leftpart-top {
+  display: flex;
+  justify-content: space-between;
+  /* height: 10%; */
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.leftpart-top h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #ff512f;
+}
+
+.view {
+  background: #031244;
+  color: #fcfcfc;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border: none;
+  padding: 8px 5px;
+  border-radius: 3px;
+}
+
+.view:hover {
+  background-color: #ff7b00;
+}
+
+.leftpart-card-container {
+  height: 85%;
+  background: white;
+  display: flex;
+  transition: 1s;
+}
+
+.card {
+  padding: 1.5em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card img {
+  height: 200px;
+  width: 230px;
+  background: rgb(249, 251, 255);
+  min-height: 200px;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+.card-product-price {
+  margin: -2px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: blue;
+}
+
+.card-product-name {
+  margin: 6px;
+  font-size: 1rem;
+  font-weight: 900;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.descrption {
+  margin: 3px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.card-product-main-container {
+  display: flex;
+}
+
+.product-btn {
+  position: absolute;
+  padding: 20px 8px;
+  height: 90px;
+  font-size: 2rem;
+  margin: auto 0;
+  border: none;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0, 0.2);
+  background: rgb(255, 255, 255);
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.product-btn-display {
+  display: none;
+}
+
+.product-btn-container {
+  position: relative;
+  margin: auto;
+  top: -85px;
+}
+
+#product-btn-right {
+  margin-left: -46px;
+}
+
+.translatebody-card {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .leftpart-card-container {
+    flex-direction: column;
+  }
+  .left-part {
+    overflow: scroll;
+  }
+  .leftpart-content h1{
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .right-part {
+    width: 25%;
+  }
+  .left-part {
+    width: 75%;
+  }
+  .view {
+    font-size: 0.7rem;
+    padding: 8px 5px;
+  }
+}
