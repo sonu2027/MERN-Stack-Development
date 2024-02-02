@@ -1,0 +1,36 @@
+Port: In computer networking, a port is a logical construct that is used to identify a specific processes or a service runnning on a computer or other networked device
+
+Port numbers are the processes of a device and IP address is the address of that device
+
+--> There are 65535 available ports , which can be classifies into 3 different types
+ a) Well-known port
+   Assigned by IANA (Internet assigned number authority )
+   Ranges from 0 to 1023
+
+   Example:
+   Port 80: HTTP (Hyper Text Transfer Protocol)
+   port 443: HTTPS (Hyper Text Transfer Protocol Secure)
+   port 25: SMTP (Simple Mail Transfer Protocol)
+   port 53: DNS (Domain Name System)
+   port 110: POP3 (Post Office Protocol Version 3)
+   port 143: IMAP (Internet Message Access Protocol)
+
+ b) Registeres port
+   Assigned by IANA (Internet assigned number authority )
+   Ranges from 1023 to 49151
+
+   Example:
+   Port 8080: HTTP altrrnate (Used as secondary web server port)
+   port 3306: MySQL DBMS
+   port 5432: PostgreSQL DBMS
+   port 3389: Remote Desktop Protocol (Used for remote access to a computer)
+   
+ c) Dynamic or Private port
+   Assigned by IANA (Internet assigned number authority )
+   Ranges from 49152 to 65535
+
+   Example:
+   Port 8080: HTTP altrrnate (Used as secondary web server port)
+   port 3306: MySQL DBMS
+   port 5432: PostgreSQL DBMS
+   port 3389: Remote Desktop Protocol (Used for remote access to a computer)

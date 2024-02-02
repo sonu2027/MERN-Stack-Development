@@ -1,0 +1,18 @@
+1. What is REST API
+ -- Rest stand for representational state transfer
+ -- API stands for Application Programming Interface
+ -- Commonly known as RESTful API
+ -- Rest API is define as an interface that two computer system use to exchange information securely over the the internet
+
+Rest is based on a few core principles, including
+  a) Client-server architecture
+  b) Stateless Communication
+  c) Resource-Based Interaction
+  d) Uniform Interface
+  e0 cacheable 
+
+2. Example of REST API
+3. Stateless and stateful REST API
+4. Why REST API is needed
+5. How REST API works
+ -- The Rest API works by using HTTP request methos such as GET, PUT, POST, DELETE and some other HTTP request method
