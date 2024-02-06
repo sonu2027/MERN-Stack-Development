@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body class="bg-slate-300">
+    <h1 class="py-4 text-center text-2xl font-medium">BMI Calculator</h1>
+    <div id="01" class="flex justify-center items-center m-8">
+        <form action="">
+            <label for="height">Height in cm: </label>
+            <input placeholder="Enter your height in cm"
+                class="w-48 h-8  focus:outline-none border-2 border-solid hover:border-slate-500 rounded-md"
+                type="number" name="" id="height" min="30" max="250" /><br /><br />
+            <label for="weight">Weight in kg: </label>
+            <input placeholder="Enter your height in kg"
+                class="w-48 h-8 focus:outline-none border-2 border-solid hover:border-slate-500 rounded-md"
+                type="number" name="" id="weight" min="1" max="500" /><br /><br />
+            <button
+                class="text-center w-52  bg-blue-500 text-white   rounded-md   border-solid border-slate-500 py-1">Calculate</button><br><br>
+        </form>
+    </div>
+    <div class="flex flex-col justify-center  items-center ">
+        <h1 class="text-xl font-medium ">BMI Weight guide</h1>
+        <p>Under weight = Less than 18.6</p>
+        <p>Normal range = 18.6 to 24.9</p>
+        <p>Over weight = Greater than 24.9</p>
+    </div>
+    <script>
+        /*
+        // If the button is out of form tag
+        let inpTag = document.querySelectorAll("input");
+        let btn = document.querySelector("button");
+
+        // Create a new button
+        let newBtn = document.createElement("button");
+        let n = document.getElementById("01");
+        n.appendChild(newBtn);
+
+        btn.addEventListener("click", () => {
+            let ans = (Number(inpTag[0].value) / Number(inpTag[1].value)) ** 2;
+            newBtn.innerHTML = ans;
+        });
+        */
+
+
+        // If the button is in the form tag then there is a concept submit event
+        const form = document.querySelector('form')
+
+        // Creating new elemnt
+        const div = document.createElement("div")
+        form.appendChild(div)
+
+        form.addEventListener("submit", (e) => {
+            // Preventing default functionality of form submit behaviour
+            e.preventDefault()
+
+            const height = Number(document.querySelector("#height").value)
+            const weight = Number(document.querySelector("#weight").value)
+
+            if (height == "" && weight == "")
+                div.innerHTML = "Please enter your height and weight"
+            else if (height == "")
+                div.innerHTML = "Please enter your height"
+            else if (weight == "")
+                div.innerHTML = "Please enter your weight"
+            else {
+                const bmi = (weight / ((height * height) / 10000)).toFixed(2)
+                div.innerHTML = bmi
+            }
+        })
+    </script>
+</body>
+
+</html>

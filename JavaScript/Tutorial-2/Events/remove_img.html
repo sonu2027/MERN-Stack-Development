@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove img</title>
+</head>
+<body>
+    <ul>
+        <li><img style="width:12rem; height: 10rem;" src="https://images.pexels.com/photos/19723129/pexels-photo-19723129/free-photo-of-rocks-on-sea-shore-in-town-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+        <li><img style="width:12rem; height: 10rem;" src="https://images.pexels.com/photos/20094426/pexels-photo-20094426/free-photo-of-a-person-is-swimming-in-a-river-near-a-cliff.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+        <li><img style="width:12rem; height: 10rem;" src="https://images.pexels.com/photos/19770202/pexels-photo-19770202/free-photo-of-sunset-above-sea-and-coastline.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+        <li><img style="width:12rem; height: 10rem;" src="https://images.pexels.com/photos/19845844/pexels-photo-19845844/free-photo-of-winding-dirt-road-by-pond-and-meadow.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+        <li><img style="width:12rem; height: 10rem;" src="https://images.pexels.com/photos/19990385/pexels-photo-19990385/free-photo-of-carretera-selvatica.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+    </ul>
+
+    <script>
+        let ul=document.querySelector("ul")
+        ul.addEventListener("click", function(e){
+            console.log(e.target)
+            console.log(e.target.tagName)
+            if(e.target.tagName=='IMG'){
+                e.target.parentNode.remove()
+            }
+        })
+    </script>
+</body>
+</html>

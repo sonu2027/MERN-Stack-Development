@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+
+    <style>
+        body{
+            font-family: sans-serif
+        }
+    </style>
+
+</head>
+<body>
+    <ul id="ul">
+        <li>C/C++</li>
+        <li>Python</li>
+        <li id="js">JavaScript</li>
+        <li>Java</li>
+        <li>Ruby</li>
+        <li id="google"><a href="https://www.google.com/">google</a></li>
+    </ul>
+
+    <script>
+        // Two type of a event propagation
+        //1. true: eventCapturing, 
+        //2. false: eventBubbling, false is a default parameter
+
+        const ul=document.getElementById("ul")
+        const js=document.getElementById("js")
+        const google=document.getElementById("google")
+
+        ul.addEventListener("click", function(e){
+            // Important of e object
+            // type, timestamps, preventDefault, 
+            // target, target.parentNode, target.tagName, toElement, srcElement, currentTarget,
+            // clientX, clientY, screenx, screenY,
+            // altKey, ctrlKey, shiftKey, keyCode
+            console.log(e)
+            console.log(e.timeStamp)
+            console.log("UL is clicked")
+            //e.stopPropagation() // It will stop the propagation
+        }, false)
+
+        js.addEventListener("click", function(e){
+            console.log("JS is clicked")
+        }, false)
+
+        google.addEventListener("click", function(e){
+            console.log("Google is clicked")
+            e.preventDefault()
+            e.stopPropagation()
+        }, false)
+    </script>
+
+</body>
+</html>

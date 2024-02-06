@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <h1 class="text-center text-2xl text-red-700  mt-4">Digital Clock</h1>
+    <span class="flex justify-center items-center mt-6 ">
+        <div class="bg-slate-800 text-orange-500     text-2xl  text-center flex justify-center items-center w-36 h-12 rounded-md"></div>
+    </span>
+
+    <script>
+        let newDiv = document.createElement("div");
+
+        function myExpression() {
+            let date = new Date().toLocaleTimeString();
+            newDiv.innerHTML = date;
+            let div = document.querySelector("div");
+            div.appendChild(newDiv);
+        }
+        setInterval(myExpression, 1000);
+    </script>
+</body>
+
+</html>

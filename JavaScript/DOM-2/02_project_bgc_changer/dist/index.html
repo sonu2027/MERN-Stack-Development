@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Changer</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="flex justify-center items-center gap-x-2 h-96">
+        <div id="01" class="h-24 w-24 border-2 border-solid border-inherit bg-gray-400"></div>
+        <div id="02" class="h-24 w-24 border-2 border-solid border-inherit bg-orange-500"></div>
+        <div id="03" class="h-24 w-24 border-2 border-solid border-inherit bg-blue-600"></div>
+        <div id="04" class="h-24 w-24 border-2 border-solid border-inherit bg-slate-950"></div>
+    </div>
+    <script>
+        let box = document.querySelector(
+            ".flex.justify-center.items-center.gap-x-2.h-96"
+        ).children;
+        const color = ["#838a84", "#eb4c17", "#3e81e6", "#1c1e1f"];
+
+        for (let i = 0; i < box.length; i++) {
+            box[i].addEventListener("click", (e) => {
+                console.log(e); // event onject
+                console.log("e.target is: ", e.target); // source of event from where it comes
+                
+                //document.body.style.background = color[i];
+
+                //With event object
+                if (e.target.id == "01") document.body.style.backgroundColor = "#838a84";
+                else if (e.target.id == "02") document.body.style.background = "#eb4c17";
+                else if (e.target.id == "03") document.body.style.background = "#3e81e6";
+                else document.body.style.background = "#1c1e1f";
+            });
+        }
+    </script>
+</body>
+
+</html>
