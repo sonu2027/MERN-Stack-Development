@@ -15,7 +15,11 @@ function promiseOne() {
   promise.then(function () {
     console.log("Promises 1 consumed");
   });
+
+  // This will print first
+  console.log("Hi");
 }
+// promiseOne()
 
 // Syntax 2
 function promiseTwo() {
@@ -27,7 +31,10 @@ function promiseTwo() {
   }).then(() => {
     console.log("Promises 2 consumed");
   });
+  // This will print first
+  console.log("Hi");
 }
+// promiseTwo()
 
 // return in promise
 function PromiseThree() {
@@ -113,10 +120,12 @@ async function getResult() {
     console.log(error);
   }
 }
-// getResult()
+getResult()
+console.log("hi");
 
 // api call using then(), catch() and finally with fetch()
-fetch("https://api.github.com/search/users?q=type:user")
+function promiseSeven(){
+  fetch("https://api.github.com/search/users?q=type:user")
   .then((res) => {
     return res.json();
   })
@@ -129,6 +138,8 @@ fetch("https://api.github.com/search/users?q=type:user")
   .finally(() => {
     console.log("Task completed");
   });
+  console.log("hi");
+}
 
 
 /*

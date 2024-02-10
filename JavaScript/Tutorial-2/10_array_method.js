@@ -71,6 +71,7 @@ const showJoin = function () {
 // Method 8: toString()
 const makeString = function () {
   const arr = [1, 2, 3, 4, 5, 6, 7, 78, 8];
+  // const str = arr.toString(); // This will also work
   const str = arr.toString();
   console.log(str, " ", str.length);
 };
@@ -101,7 +102,7 @@ const showSplice = function () {
   arr.splice(4, 3, 998, 1000, 17);
   console.log(arr);
 };
-// showSplice();
+showSplice();
 
 /*
 --> Diff b/w slice and splice

@@ -1,5 +1,5 @@
 // HOF means a function taking another function as a parameter
-
+// callback: A function func1(func2) taking func2 as a parameter the func2 is said to be call back
 //1
 let powerTwo=(n)=>{
     return n**2

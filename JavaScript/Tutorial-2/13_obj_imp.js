@@ -19,7 +19,7 @@ const inject = function () {
   console.log(obj.greeting);
   obj.greeting();
 };
-// inject()
+inject()
 
 // many object in one object - Object.assign(obj1, obj2, etc)
 const assigned = function () {
@@ -85,4 +85,4 @@ const syntax=function(){
     const {name:n, salary:s}=user
     console.log(n , "  ", s);
 }
-syntax()
+// syntax()
