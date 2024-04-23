@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { logout } from './store/authSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { Navigate } from 'react-router';
+import { Navigate} from 'react-router';
+import { Link } from 'react-router-dom';
 
 function Image() {
 
@@ -63,7 +64,7 @@ function Image() {
             console.error('Error occurred while registering:', error);
             // Optionally, you can show an error message to the user
         }
-        setUploadImage(uploadImage)
+        setUploadImage(!uploadImage)
     };
 
     return (
@@ -97,10 +98,13 @@ function Image() {
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
                 {
                     imageData.map((e) =>
-                        <div key={e}>
-                            <img style={{ height: "35vh", width: "20vw" }} src={`${e}`} alt="img"
-                            />
-                        </div>)
+                        <Link key={e} to={`/image/viewimage/${encodeURIComponent(e.slice(7, e.length))}`}>
+                            <div>
+                                <img style={{ height: "35vh", width: "20vw" }} src={`${e}`} alt="img"
+                                />
+                            </div>
+                        </Link>
+                    )
                 }
             </div>
 

@@ -19,4 +19,7 @@ import userRouter from './routes/user.routes.js'
 app.use("/api/v1/users", userRouter)
 app.use("/", userRouter)
 
+import imageRouter from './routes/image.routes.js'
+app.use("/image", imageRouter)
+
 export default app

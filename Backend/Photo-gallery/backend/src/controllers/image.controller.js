@@ -41,4 +41,29 @@ const uploadImage = async (req, res, next) => {
     .json(new ApiResponse(200, images, "Image uploaded successfully"));
 };
 
-export { uploadImage};
+const deleteImage = async (req, res) => {
+  try {
+    let imageUrl = req.query.param1;
+    imageUrl=imageUrl.slice(8,imageUrl.length)
+    imageUrl="http://"+imageUrl
+
+    console.log("Image url for delete: ", imageUrl, typeof imageUrl);
+
+    // Delete image document from MongoDB
+    const deletionResult = await Image.deleteOne({ image: imageUrl });
+    console.log("deletion result: ", deletionResult);
+    console.log(
+      `${deletionResult.deletedCount} document(s) deleted from MongoDB`
+    );
+
+    return res
+    .status(201)
+    .json(new ApiResponse(200, imageUrl, "Image deleted successfully"));
+
+  } catch (error) {
+    console.error("Error deleting image:", error);
+    return res.status(500).json({ error: "Failed to delete image" });
+  }
+};
+
+export { uploadImage, deleteImage };
