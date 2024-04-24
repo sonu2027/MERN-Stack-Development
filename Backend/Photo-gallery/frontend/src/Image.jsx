@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { logout } from './store/authSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { Navigate} from 'react-router';
+import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
 
 function Image() {
@@ -73,7 +73,7 @@ function Image() {
             {
                 status ?
                     <>
-                        <button style={{ margin: "10px" }} onClick={() => {
+                        <button className='m-2 absolute right-4 top-2 text-red-500 font-medium' onClick={() => {
                             dispatch(logout())
                         }}>Logout</button>
                     </>
@@ -82,30 +82,34 @@ function Image() {
                         <Navigate to="/" />
                     </>
             }
-            <div>
-                <img src={`${userProfilePhoto}`} style={{ height: "35vh", width: "18vw" }} alt="Profile Photo" />
-                <div>{fullName}</div>
+            <div className='flex flex-col justify-center items-center bg-slate-200 pt-2 pb-2'>
+                <img className='rounded-full w-48' src={`${userProfilePhoto}`} alt="Profile Photo" />
+                <div className='text-blue-500 font-medium'>{fullName}</div>
             </div>
+            <br />
 
             {
-                status && <form onSubmit={handleUpload} encType='multipart/form-data'>
+                status && <form className='ml-2' onSubmit={handleUpload} encType='multipart/form-data'>
+                    <div>Upload Photos</div>
                     <input type="file" name="image" id="" placeholder='Upload Files' /><br /><br />
-                    <button type="submit">Upload</button>
+                    <button className='bg-blue-500 rounded-sm text-white px-2 py-1' type="submit">Upload</button>
                 </form>
             }
 
-
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-                {
-                    imageData.map((e) =>
-                        <Link key={e} to={`/image/viewimage/${encodeURIComponent(e.slice(7, e.length))}`}>
-                            <div>
-                                <img style={{ height: "35vh", width: "20vw" }} src={`${e}`} alt="img"
-                                />
-                            </div>
-                        </Link>
-                    )
-                }
+            <div className='text-blue-500 ml-2 mt-8 mb-2 text-2xl'>Photos</div>
+            <div className='flex justify-center items-center px-2'>
+                <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'>
+                    {
+                        imageData.map((e) =>
+                            <Link key={e} to={`/image/viewimage/${encodeURIComponent(e.slice(7, e.length))}`}>
+                                <div>
+                                    <img src={`${e}`} alt="img"
+                                    />
+                                </div>
+                            </Link>
+                        )
+                    }
+                </div>
             </div>
 
         </div>

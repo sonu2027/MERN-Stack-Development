@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 
-import { login} from './store/authSlice'
+import { login } from './store/authSlice'
 
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -67,26 +67,34 @@ function Home() {
         status ?
           <Navigate to="/image" />
           :
-          <div>
-            <h1>Login</h1>
-            <form onSubmit={handleSubmit} encType='multipart/form-data'>
-              <input type="email" name="email" placeholder='Enter your email' id="email" /><br /><br />
-              <input type="password" name="password" placeholder='Enter your password' id="password" /><br /><br />
-              <input type="submit" value="Login" />
-            </form>
-            <br />
-            <div>
-              Don't have an acoount? &nbsp;
-              <Link style={{ textDecoration: 'none' }} to='/api/v1/users/register'>
-                <b>Register</b>
-              </Link>
+          <div className='bg-gray-100 h-screen flex justify-center items-center'>
+            <div className='bg-white rounded-md border-2 border-solid border-slate-300 px-4 py-6'>
+              <h1 className='text-2xl sm:text-3xl mb-6'>Photo Gallery</h1>
+              <form onSubmit={handleSubmit} encType='multipart/form-data'>
+
+                <input className='border-2 solid border-gray-300 rounded-sm w-64 sm:w-72 bg-gray-100 px-1 py-1 focus:outline-blue-500 mb-3' type="email" name="email" placeholder='Email' id="email" /><br />
+
+                <input className='border-2 solid border-gray-300 rounded-sm w-64 sm:w-72 bg-gray-100 px-1 py-1 focus:outline-blue-500' type="password" name="password" placeholder='Password' id="password" /><br /><br />
+
+                {
+                  loginStatus &&
+                  <>
+                    <div className='mb-4 text-red-500 font-medium'>Login failed</div>
+                  </>
+                }
+
+                <input className='rounded-sm text-white w-64 sm:w-72 bg-blue-500 px-1 py-1 hover:cursor-pointer' type="submit" value="Login" />
+
+              </form>
+              <br />
+
+              <div>
+                Don't have an account? &nbsp;
+                <Link style={{ textDecoration: 'none' }} to='/api/v1/users/register'>
+                  <b className='text-blue-400'>Register</b>
+                </Link>
+              </div>
             </div>
-            {
-              !loginStatus &&
-              <>
-                <div>Login failed</div>
-              </>
-            }
           </div>
       }
     </>

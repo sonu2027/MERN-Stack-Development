@@ -16,7 +16,7 @@ function ViewImage() {
 
     const [showPopup, setShowPopup] = useState(false)
 
-    const navigate=useNavigate()
+    const navigate = useNavigate()
 
     const userId = useSelector((s) => s.auth.userData.userId)
 
@@ -38,7 +38,13 @@ function ViewImage() {
         try {
             const res = await axios.delete(`http://localhost:5000/image/viewimage?param1=${encodeURIComponent('https://' + imageURL)}`);
             console.log("res from delete: ", res.data);
-            navigate(`/image/viewimage/${encodeURIComponent(next.slice(7, next.length))}`)
+            console.log("prev for routing: ", prev, next);
+            if (prev != "") {
+                navigate(`/image/viewimage/${encodeURIComponent(prev.slice(7, prev.length))}`)
+            }
+            else {
+                navigate(`/image`)
+            }
         } catch (error) {
             console.error("Error deleting document:", error);
         }
@@ -83,7 +89,7 @@ function ViewImage() {
     }
 
 
-    console.log("prev, next: ", prev, next, deletedSuccessfully);
+    console.log("prev, next: ", prev, next);
 
 
     return (
@@ -95,20 +101,19 @@ function ViewImage() {
                 </Link>
             }
 
-            <img onClick={() => handleShowPopup(showPopup)} style={{ height: "80vh", width: "60vw" }} src={`https://${imageURL}`} alt="Image" />
+            <div className='flex flex-col justify-center items-center h-screen'>
+                <img className='w-64 md:w-72 lg:w-80 xl:w-96' onClick={() => handleShowPopup(showPopup)} src={`https://${imageURL}`} alt="Image" />
+                {
+                    showPopup && <div className='w-64 md:w-72 lg:w-80 xl:w-96 bg-gray-400 text-white relative h-10 bottom-10 flex justify-center items-center'>
+                        <MdDeleteOutline onClick={deleteDocument} style={{ color: "red", fontSize: "2rem" }} />
+                    </div>
+                }
+            </div>
 
             {
                 next != "" && <Link to={`/image/viewimage/${encodeURIComponent(next.slice(7, next.length))}`}>
                     <div style={{ height: "3rem", width: "1.5rem", backgroundColor: "rgb(182, 222, 222)", position: 'absolute', right: "1rem", borderRadius: "4px" }}></div>
                 </Link>
-            }
-
-            <br />
-
-            {
-                showPopup && <div style={{ backgroundColor: "grey", color: "white", position: "absolute", top: "71vh", width: "60vw", height: "10vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                    <MdDeleteOutline onClick={deleteDocument} style={{ color: "red", fontSize: "2rem" }} />
-                </div>
             }
 
         </div>
