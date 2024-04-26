@@ -6,6 +6,9 @@ import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { MdDeleteOutline } from "react-icons/md";
+import { TfiArrowLeft } from "react-icons/tfi";
+import { IoMdArrowDropleft } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
 
 function ViewImage() {
     const { imageURL } = useParams()
@@ -51,6 +54,9 @@ function ViewImage() {
     };
 
     useEffect(() => {
+        if(!userId){
+            navigate("/")
+        }
         fetchImage()
             .then((response) => {
                 response.map((e, i) => {
@@ -93,30 +99,36 @@ function ViewImage() {
 
 
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        userId && <div className='bg-slate-900 pt-3'>
+            <Link to="/image">
+                <TfiArrowLeft className='text-white text-2xl ml-3 mt-3' />
+            </Link>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
 
-            {
-                prev != "" && <Link to={`/image/viewimage/${encodeURIComponent(prev.slice(7, prev.length))}`}>
-                    <div style={{ height: "3rem", width: "1.5rem", backgroundColor: "rgb(182, 222, 222)", position: 'absolute', left: "1rem", borderRadius: "4px" }}></div>
-                </Link>
-            }
-
-            <div className='flex flex-col justify-center items-center h-screen'>
-                <img className='w-64 md:w-72 lg:w-80 xl:w-96' onClick={() => handleShowPopup(showPopup)} src={`https://${imageURL}`} alt="Image" />
                 {
-                    showPopup && <div className='w-64 md:w-72 lg:w-80 xl:w-96 bg-gray-400 text-white relative h-10 bottom-10 flex justify-center items-center'>
-                        <MdDeleteOutline onClick={deleteDocument} style={{ color: "red", fontSize: "2rem" }} />
-                    </div>
+                    prev != "" && <Link to={`/image/viewimage/${encodeURIComponent(prev.slice(7, prev.length))}`}>
+                        <IoMdArrowDropleft className='text-white text-4xl sm:text-5xl absolute left-1' />
+                    </Link>
                 }
+
+                <div className='flex flex-col justify-center items-center h-screen'>
+                    <img className='w-64' onClick={() => handleShowPopup(showPopup)} src={`https://${imageURL}`} alt="Image" />
+                    {
+                        showPopup && <div className='w-64 md:w-72 lg:w-80 xl:w-96 bg-slate-900 text-white relative h-10 bottom-10 flex justify-center items-center'>
+                            <MdDeleteOutline onClick={deleteDocument} style={{ color: "white", fontSize: "2rem" }} />
+                        </div>
+                    }
+                </div>
+
+                {
+                    next != "" && <Link to={`/image/viewimage/${encodeURIComponent(next.slice(7, next.length))}`}>
+                        <IoMdArrowDropright className='text-white text-4xl sm:text-5xl absolute right-1' />
+                    </Link>
+                }
+
             </div>
-
-            {
-                next != "" && <Link to={`/image/viewimage/${encodeURIComponent(next.slice(7, next.length))}`}>
-                    <div style={{ height: "3rem", width: "1.5rem", backgroundColor: "rgb(182, 222, 222)", position: 'absolute', right: "1rem", borderRadius: "4px" }}></div>
-                </Link>
-            }
-
         </div>
+
     )
 }
 
