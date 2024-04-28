@@ -1,7 +1,10 @@
 import { ApiError } from "../utils/ApiError.js";
 import { User } from "../models/user.model.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
-import { uploadOnCloudinary } from "../utils/cloudinary.js";
+import {
+  deleteFromCloudinary,
+  uploadOnCloudinary,
+} from "../utils/cloudinary.js";
 
 const registerUser = async (req, res, next) => {
   // get user details from frontend
@@ -52,6 +55,7 @@ const registerUser = async (req, res, next) => {
     password,
     username,
     image: image?.url || "",
+    image_public_id: image?.public_id || "",
   });
 
   const createdUser = await User.findById(user._id).select("-password");
@@ -76,9 +80,7 @@ const loginUser = async (req, res, next) => {
     );
 
     if (foundUser.length == 0) {
-      return res
-      .status(500)
-      .json(new ApiResponse(200, {}, "User not found"));
+      return res.status(500).json(new ApiResponse(200, {}, "User not found"));
       // throw new ApiError(500, "User not found");
     }
 
@@ -91,4 +93,70 @@ const loginUser = async (req, res, next) => {
   }
 };
 
-export { registerUser, loginUser };
+const updateName = async (req, res, next) => {
+  let { fullName, userId } = req.body;
+  if (!fullName) {
+    try {
+      let { userId } = req.body;
+
+      console.log("userId", userId);
+
+      console.log("req.files: ", req.files);
+
+      let imageLocalPath;
+      if (
+        req.files &&
+        Array.isArray(req.files.image) &&
+        req.files.image.length > 0
+      ) {
+        imageLocalPath = req.files.image[0].path;
+      }
+      console.log("imagelocalpath: ", imageLocalPath);
+
+      const image = await uploadOnCloudinary(imageLocalPath);
+
+      console.log("Image: ", image);
+
+      // delete previoud profile picture from cloudinary
+      let get_user = await User.find();
+      get_user = get_user.filter((e) => e._id == userId);
+      let user_pub_id = get_user[0].image_public_id;
+
+      deleteFromCloudinary(user_pub_id);
+
+      // Update Image of user
+      const updationResult = await User.updateOne(
+        { _id: userId }, // Filter
+        { $set: { image: image.url, image_public_id: image.public_id } }
+      );
+      console.log("updation result: ", updationResult);
+
+      return res
+        .status(201)
+        .json(new ApiResponse(200, image.url, "name updated successfully"));
+    } catch (error) {
+      console.error("Error updating name:", error);
+      // return
+    }
+  } else {
+    try {
+      console.log("Full name and userId", fullName, userId);
+
+      // Update anme of user
+      const updationResult = await User.updateOne(
+        { _id: userId }, // Filter
+        { $set: { fullName: fullName } }
+      );
+      console.log("updation result: ", updationResult);
+
+      return res
+        .status(201)
+        .json(new ApiResponse(200, fullName, "name updated successfully"));
+    } catch (error) {
+      console.error("Error updating name:", error);
+      return res.status(500).json({ error: "Failed to update name" });
+    }
+  }
+};
+
+export { registerUser, loginUser, updateName };

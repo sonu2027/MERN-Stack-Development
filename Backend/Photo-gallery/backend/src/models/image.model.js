@@ -8,6 +8,10 @@ const imageSchema = new Schema(
             type: String, //cloudinary url
             required: true
         },
+        image_public_id:{
+            type:String,
+            required: true
+        },
         owner: {
             type: Schema.Types.ObjectId,
             ref: "User"

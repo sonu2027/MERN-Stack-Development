@@ -1,148 +1,134 @@
-import React, { useEffect, useState } from 'react'
-import { logout } from './store/authSlice.js';
-import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { Navigate } from 'react-router';
+import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { useParams } from 'react-router'
+import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import { RxCross1 } from "react-icons/rx";
+import { useSelector } from 'react-redux';
+import { MdDeleteOutline } from "react-icons/md";
+import { TfiArrowLeft } from "react-icons/tfi";
+import { IoMdArrowDropleft } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
 
 function Image() {
+    const { imageURL } = useParams()
+    console.log('ImageURL: ', imageURL);
 
-    const dispatch = useDispatch();
-    const status = useSelector((s) => s.auth.status)
+    const [prev, setPrev] = useState("")
+    const [next, setNext] = useState("")
+
+    const [showPopup, setShowPopup] = useState(false)
+
+    const navigate = useNavigate()
+
     const userId = useSelector((s) => s.auth.userData.userId)
-    const userProfilePhoto = useSelector((s) => s.auth.userData.userProfilePhoto)
-    const fullName = useSelector((s) => s.auth.userData.fullName)
-    console.log("status and userid in login ", status, userId, userProfilePhoto, fullName);
-    const [uploadImage, setUploadImage] = useState(false)
-    const [uploadFailed, setUploadfailed]=useState(false)
 
-    const [imageData, setImageData] = useState([])
-
-    useEffect(() => {
-        async function fetchImages() {
-            let imagesData = await axios.get("http://localhost:5000/image")
-            imagesData = imagesData.data
-            let images = new Array()
-            imagesData.map((e) => {
-                if (e.ownerId == userId) {
-                    images.push(e.image)
-                }
-            })
-            console.log("res: ", images);
-            setImageData(images)
-        }
-        fetchImages()
-    }, [uploadImage])
-
-
-    const handleUpload = async (event) => {
-        event.preventDefault(); // Prevent the default form submission behavior
-        console.log("even.target: ", event.target);
-
-        // Fetch the registration endpoint with form data
-        const formData = new FormData(event.target);
-        formData.append('ownerId', userId);
-        console.log("formData: ", event.target);
+    async function fetchImage() {
         try {
-            const response = await fetch('http://localhost:5000/image', {
-                method: 'POST',
-                body: formData
-            });
-
-            console.log("response: ", response);
-
-            if (response.ok) {
-                // Registration successful, handle response
-                const data = await response.json();
-                console.log('Images: ', data);
-                setUploadOption(false)
-                // Optionally, you can redirect the user to another page or show a success message here
-            } else {
-                setUploadfailed(true)
-                setTimeout(()=>{
-                    setUploadfailed(false)
-                }, 3000)
-                // Handle errors
-                console.error('Registration failed:', response.statusText);
-                // Optionally, you can show an error message to the user
-            }
-        } catch (error) {
-            console.error('Error occurred while registering:', error);
-            // Optionally, you can show an error message to the user
+            let response = await axios.get("http://localhost:5000/image")
+            response = response.data
+            response = response.filter((e) => e.ownerId === userId)
+            console.log("res in viewimage: ", response);
+            return response
         }
-        setUploadImage(!uploadImage)
-    };
-
-    const [uploadOption, setUploadOption] = useState(false)
-
-    const showUploadOption = () => {
-        setUploadOption(!uploadOption)
+        catch (error) {
+            console.log("Fetching img failed: ", error);
+        }
     }
 
-    return (
-        <div className='bg-gray-100 pb-24'>
 
-            {
-                status ?
-                    <>
-                        <button className='m-2 absolute right-4 top-2 text-red-500 font-medium' onClick={() => {
-                            dispatch(logout())
-                        }}>Logout</button>
-                    </>
-                    :
-                    <>
-                        <Navigate to="/" />
-                    </>
+    const deleteDocument = async () => {
+        try {
+            const res = await axios.delete(`http://localhost:5000/image/viewimage?param1=${encodeURIComponent('https://' + imageURL)}`);
+            console.log("res from delete: ", res.data);
+            console.log("prev for routing: ", prev, next);
+            if (prev != "") {
+                navigate(`/home/image/${encodeURIComponent(prev.slice(7, prev.length))}`)
             }
-            <div className='flex flex-col justify-center items-center bg-gray-300 pt-2 pb-2'>
-                <img className='rounded-full w-48' src={`${userProfilePhoto}`} alt="Profile Photo" />
-                <div className='text-blue-500 font-medium'>{fullName}</div>
-            </div>
-            <br />
+            else {
+                navigate(`/home`)
+            }
+        } catch (error) {
+            console.error("Error deleting document:", error);
+        }
+    };
+
+    useEffect(() => {
+        if(!userId){
+            navigate("/")
+        }
+        fetchImage()
+            .then((response) => {
+                response.map((e, i) => {
+                    console.log("e", e);
+                    if (`http://${imageURL}` == e.image) {
+                        // console.log("e[i+1].image: ", response[i + 1].image);
+                        // console.log("response[i+1].image: ", response[i + 1].image);
+
+                        if (response[i + 1] && response[i - 1]) {
+                            setNext(response[i + 1].image)
+                            setPrev(response[i - 1].image)
+                        }
+                        else if (response[i + 1]) {
+                            setNext(response[i + 1].image)
+                            setPrev("")
+                        }
+                        else if (response[i - 1]) {
+                            setPrev(response[i - 1].image)
+                            setNext("")
+                        }
+                    }
+                })
+            })
+    }, [imageURL])
+
+    const handleShowPopup = (para) => {
+        if (para == false) {
+            setShowPopup(!showPopup)
+            setTimeout(() => {
+                setShowPopup(false)
+            }, 4000)
+        }
+        else {
+            setShowPopup(false)
+        }
+    }
 
 
-            {
-                uploadOption &&
-                <div className='bg-white fixed top-1/3 right-1/2 translate-x-1/2 translate-y-1/2 rounded-md border-2 border-solid border-gray-100'>
-                    <div className='flex justify-end items-center'>
-                        <RxCross1 onClick={showUploadOption} className='m-2 hover:cursor-pointer' />
-                    </div>
-                    <form className='flex flex-col justify-center items-center px-4 pb-4 pt-2' onSubmit={handleUpload} encType='multipart/form-data'>
-                        <input type="file" name="image" id="" placeholder='Upload Files' /><br /><br />
-                        <button className='bg-blue-500 rounded-sm text-white px-4 py-1' type="submit">Post</button>
-                    </form>
+    console.log("prev, next: ", prev, next);
+
+
+    return (
+        userId && <div className='bg-slate-900 pt-3'>
+            <Link to="/home">
+                <TfiArrowLeft className='text-white text-2xl fixed top-3 left-3' />
+            </Link>
+            <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+
+                {
+                    prev != "" && <Link to={`/home/image/${encodeURIComponent(prev.slice(7, prev.length))}`}>
+                        <IoMdArrowDropleft className='text-white text-4xl sm:text-5xl absolute left-1' />
+                    </Link>
+                }
+
+                <div className='flex flex-col justify-center items-center h-screen'>
+                    <img className='w-64' onClick={() => handleShowPopup(showPopup)} src={`https://${imageURL}`} alt="Image" />
                     {
-                        uploadFailed && <div>Upload failed: Please try again</div>
+                        showPopup && <div className='w-64 md:w-72 lg:w-80 xl:w-96 bg-slate-900 text-white relative h-10 bottom-10 flex justify-center items-center'>
+                            <MdDeleteOutline onClick={deleteDocument} style={{ color: "white", fontSize: "2rem" }} />
+                        </div>
                     }
                 </div>
-            }
 
-            <div className='sm:mx-4 md:mx-8 lg:mx-12 bg-white rounded-md flex flex-col border-2 border-solid border-gray-100'>
-
-                <div className='mx-2 mt-8 mb-8 flex justify-between items-center'>
-                    <div className=' text-2xl'>Photos</div>
-                    <button onClick={showUploadOption} className='text-white bg-blue-500 rounded-sm px-2 py-1'>Add photo/video</button>
-                </div>
-
-                <div className='flex justify-center items-start px-2 py-2'>
-                    <div className='grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-2 gap-y-2'>
-                        {
-                            imageData.map((e) =>
-                                <Link key={e} to={`/image/viewimage/${encodeURIComponent(e.slice(7, e.length))}`}>
-                                    <div className='rounded-md border-gray-200 border-2 border-solid h-52 overflow-hidden flex justify-center items-start'>
-                                        <img className='' src={`${e}`} alt="img"
-                                        />
-                                    </div>
-                                </Link>
-                            )
-                        }
-                    </div>
-                </div>
+                {
+                    next != "" && <Link to={`/home/image/${encodeURIComponent(next.slice(7, next.length))}`}>
+                        <IoMdArrowDropright className='text-white text-4xl sm:text-5xl absolute right-1' />
+                    </Link>
+                }
 
             </div>
-
         </div>
+
     )
 }
 

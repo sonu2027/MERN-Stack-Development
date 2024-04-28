@@ -50,7 +50,7 @@ function Register() {
       {
         status ?
           <>
-            <Navigate to="/image" />
+            <Navigate to="/home" />
           </>
           :
           <div className='bg-white rounded-md border-2 border-solid border-slate-300 px-4 py-6'>
