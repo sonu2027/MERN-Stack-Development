@@ -2,16 +2,20 @@ import { Route, Routes } from "react-router";
 import React from 'react'
 import Register from "./Register.jsx";
 import Home from "./Home.jsx";
-import LoginSignin from "./LoginSignin.jsx";
+import Login from "./Login.jsx";
 import Image from "./Image.jsx";
+import Setting from "./Setting.jsx";
+import Change from "./Change.jsx";
 
 function CustomRoute() {
   return (
     <Routes>
-      <Route path="/" element={<LoginSignin/>} />
-      <Route path="/home" element={<Home/>} />
-      <Route path="/home/image/:imageURL" element={<Image/>} />
-      <Route path="/api/v1/users/register" element={<Register/>} />
+      <Route path="/" element={<Login />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/home/image/:imageURL" element={<Image />} />
+      <Route path="/api/v1/users/register" element={<Register />} />
+      <Route path="/home/setting" element={<Setting />} />
+      <Route path="/home/setting/:change" element={<Change />} />
     </Routes>
   )
 }

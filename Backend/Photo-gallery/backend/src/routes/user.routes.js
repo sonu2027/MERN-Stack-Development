@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
   registerUser,
   loginUser,
-  updateName
+  updateProfile
 } from "../controllers/user.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import { uploadImage } from "../controllers/image.controller.js";
@@ -38,7 +38,7 @@ router.route("/image").put(
       maxCount: 1,
     },
   ]),
-  updateName
+  updateProfile
 );
 
 export default router;

@@ -9,6 +9,9 @@ import { FaEdit } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import { IoPencil } from "react-icons/io5";
 
+import { IoSettingsSharp } from "react-icons/io5";
+import { IoLogOut } from "react-icons/io5";
+
 function Home() {
 
     const dispatch = useDispatch();
@@ -25,6 +28,8 @@ function Home() {
     const [updateName, setUpdateName] = useState(false)
     const [newName, setNewName] = useState("")
     const [updateImage, setUpdateImage] = useState(false)
+
+    const [clickedUser, setClickedUser] = useState(false)
 
     useEffect(() => {
         async function fetchImages() {
@@ -84,7 +89,7 @@ function Home() {
 
     const [uploadOption, setUploadOption] = useState(false)
     const [updatePPOption, setUpdatePPOption] = useState(false)
-    const [PPuploadFailed, setPPuploadFailed]=useState(false)
+    const [PPuploadFailed, setPPuploadFailed] = useState(false)
 
     const showUploadOption = () => {
         setUploadOption(!uploadOption)
@@ -152,7 +157,7 @@ function Home() {
                 dispatch(login({ userId: userId, userProfilePhoto: data.data, fullName: fullName }))
             } else {
                 setPPuploadFailed(true)
-                setTimeout(()=>{
+                setTimeout(() => {
                     setPPuploadFailed(false)
                 }, 3000)
                 // Handle errors
@@ -167,20 +172,35 @@ function Home() {
 
     return (
         <div className='bg-gray-100 pb-24'>
-
             {
                 status ?
                     <>
-                        <button className='m-2 absolute right-4 top-2 text-red-500 font-medium' onClick={() => {
-                            dispatch(logout())
-                        }}>Logout</button>
+                        <div className='m-2 absolute right-6 top-2 text-red-500 font-medium' >
+                            <img onClick={() => setClickedUser(!clickedUser)} className='h-8 w-8 hover:cursor-pointer rounded-full' src={userProfilePhoto} alt="" />
+                        </div>
+                        {clickedUser &&
+                            <ul className='m-2 absolute right-2 top-12  bg-white text-black rounded-md shadow-lg border-2 border-solid border-white md:p-2'>
+                                <Link to="/home/setting">
+                                    <li className='px-4 py-1 flex justify-start items-center gap-x-2 hover:bg-gray-200 hover:rounded-md'>
+                                        <IoSettingsSharp />
+                                        <button>Settings and Privacy</button>
+                                    </li>
+                                </Link>
+                                <li onClick={() => {
+                                    dispatch(logout())
+                                }} className='px-4 py-1 flex justify-start items-center gap-x-2 hover:bg-gray-200 hover:rounded-md'>
+                                    <IoLogOut />
+                                    <button>Log Out</button>
+                                </li>
+                            </ul>
+                        }
                     </>
                     :
                     <>
                         <Navigate to="/" />
                     </>
             }
-            <div className='flex flex-col justify-center items-center bg-gray-300 pt-2 pb-2'>
+            <div className='flex flex-col justify-center items-center bg-gray-100 pt-2 pb-2'>
                 <img onClick={() => {
                     setUpdateImage(true)
                     setTimeout(() => {
@@ -209,7 +229,7 @@ function Home() {
 
             {
                 updatePPOption &&
-                <div className='bg-white fixed top-1/3 right-1/2 translate-x-1/2 translate-y-1/2 rounded-md border-2 border-solid border-gray-100'>
+                <div className='bg-white fixed top-1/3 right-1/2 translate-x-1/2 translate-y-1/2 rounded-md border-2 border-solid border-gray-300'>
                     <div className='flex justify-end items-center'>
                         <RxCross1 onClick={() => setUpdatePPOption(false)} className='m-2 hover:cursor-pointer' />
                     </div>
@@ -226,7 +246,7 @@ function Home() {
 
             {
                 uploadOption &&
-                <div className='bg-white fixed top-1/3 right-1/2 translate-x-1/2 translate-y-1/2 rounded-md border-2 border-solid border-gray-100'>
+                <div className='bg-white fixed top-1/3 right-1/2 translate-x-1/2 translate-y-1/2 rounded-md border-2 border-solid border-gray-300'>
                     <div className='flex justify-end items-center'>
                         <RxCross1 onClick={showUploadOption} className='m-2 hover:cursor-pointer' />
                     </div>
@@ -264,7 +284,7 @@ function Home() {
 
             </div>
 
-        </div>
+        </div >
     )
 }
 

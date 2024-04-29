@@ -93,9 +93,89 @@ const loginUser = async (req, res, next) => {
   }
 };
 
-const updateName = async (req, res, next) => {
-  let { fullName, userId } = req.body;
-  if (!fullName) {
+const updateProfile = async (req, res, next) => {
+  
+  let { fullName, userId, email, password, username } = req.body;
+  console.log("req.body: ", req.body);
+  console.log("req.files", req.files);
+  if (fullName) {
+    try {
+      console.log("Full name and userId", fullName, userId);
+
+      // Update anme of user
+      const updationResult = await User.updateOne(
+        { _id: userId }, // Filter
+        { $set: { fullName: fullName } }
+      );
+      console.log("updation result: ", updationResult);
+
+      return res
+        .status(201)
+        .json(new ApiResponse(200, fullName, "name updated successfully"));
+    } catch (error) {
+      console.error("Error updating name:", error);
+      return res.status(500).json({ error: "Failed to update name" });
+    }
+  } else if (username) {
+    try {
+      console.log("username and userId", username, userId);
+
+      // Update anme of user
+      const updationResult = await User.updateOne(
+        { _id: userId }, // Filter
+        { $set: { username: username } }
+      );
+      console.log("updation result: ", updationResult);
+
+      return res
+        .status(201)
+        .json(new ApiResponse(200, username, "username updated successfully"));
+    } catch (error) {
+      console.error("Error updating username:", error);
+      return res.status(500).json({ error: "Failed to update username" });
+    }
+  } else if (email) {
+    try {
+      console.log("email and userId", email, userId);
+
+      // Update anme of user
+      const updationResult = await User.updateOne(
+        { _id: userId }, // Filter
+        { $set: { email: email } }
+      );
+      console.log("updation result: ", updationResult);
+
+      return res
+        .status(201)
+        .json(new ApiResponse(200, email, "email updated successfully"));
+    } catch (error) {
+      console.error("Error updating email:", error);
+      return res.status(500).json({ error: "Failed to update email" });
+    }
+  } else if (password) {
+    try {
+      console.log("username and userId", password, userId);
+
+      if (password[0] != password[1]) {
+        console.log("password doesn't match");
+        throw error;
+      }
+
+      // Update anme of user
+      const updationResult = await User.updateOne(
+        { _id: userId }, // Filter
+        { $set: { password: password[0] } }
+      );
+      console.log("updation result: ", updationResult);
+
+      return res
+        .status(201)
+        .json(new ApiResponse(200, password, "password updated successfully"));
+    } catch (error) {
+      console.error("Error updating password:", error);
+      return res.status(500).json({ error: "Failed to update password" });
+    }
+  } else {
     try {
       let { userId } = req.body;
 
@@ -133,30 +213,12 @@ const updateName = async (req, res, next) => {
 
       return res
         .status(201)
-        .json(new ApiResponse(200, image.url, "name updated successfully"));
+        .json(new ApiResponse(200, image.url, "pp updated successfully"));
     } catch (error) {
-      console.error("Error updating name:", error);
+      console.error("Error updating pp:", error);
       // return
-    }
-  } else {
-    try {
-      console.log("Full name and userId", fullName, userId);
-
-      // Update anme of user
-      const updationResult = await User.updateOne(
-        { _id: userId }, // Filter
-        { $set: { fullName: fullName } }
-      );
-      console.log("updation result: ", updationResult);
-
-      return res
-        .status(201)
-        .json(new ApiResponse(200, fullName, "name updated successfully"));
-    } catch (error) {
-      console.error("Error updating name:", error);
-      return res.status(500).json({ error: "Failed to update name" });
     }
   }
 };
 
-export { registerUser, loginUser, updateName };
+export { registerUser, loginUser, updateProfile };
