@@ -6,11 +6,15 @@ import Login from "./Login.jsx";
 import Image from "./Image.jsx";
 import Setting from "./Setting.jsx";
 import Change from "./Change.jsx";
+import ForgotPassword from "./ForgotPassword.jsx";
+import ChangePassword from "./ChangePassword.jsx";
 
 function CustomRoute() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/forgotpassword" element={<ForgotPassword />} />
+      <Route path="/forgotpassword/ChangePassword/:mail" element={<ChangePassword />} />
       <Route path="/home" element={<Home />} />
       <Route path="/home/image/:imageURL" element={<Image />} />
       <Route path="/api/v1/users/register" element={<Register />} />

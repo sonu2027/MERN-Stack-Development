@@ -44,15 +44,19 @@ function App() {
         setEnterOtp(true)
       }
     }
-    catch(error){
+    catch (error) {
       console.log("error: ", error);
     }
+
   }
 
   return (
     <>
       <form onSubmit={handleSubmit} encType='multipart/form-data'>
         <input type="email" name="email" id="email" placeholder='Enter email' /><br /><br />
+        {/* <input type="text" name="phonesms" id="phonesms" placeholder='Enter phone number' /><br /><br />
+        <input type="text" name="whatsapp" id="whatsapp" placeholder='Enter whatsapp number' /><br /><br /> */}
+
 
         {
           enterOtp && <input onChange={(e) => setUserOtp(e.target.value)} type="text" name="otp" id="otp" value={userOtp} placeholder='Enter OTP' />

@@ -2,7 +2,8 @@ import { Router } from "express";
 import {
   registerUser,
   loginUser,
-  updateProfile
+  updateProfile,
+  finduser,
 } from "../controllers/user.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import { uploadImage } from "../controllers/image.controller.js";
@@ -40,5 +41,10 @@ router.route("/image").put(
   ]),
   updateProfile
 );
+
+import { sendemail } from "../controllers/user.controller.js";
+router.route("/sendemail").post(upload.fields([]), sendemail);
+
+router.route("/finduser").post(upload.fields([]), finduser);
 
 export default router;

@@ -5,6 +5,7 @@ import {
   deleteFromCloudinary,
   uploadOnCloudinary,
 } from "../utils/cloudinary.js";
+import nodemailer from "nodemailer";
 
 const registerUser = async (req, res, next) => {
   // get user details from frontend
@@ -94,7 +95,6 @@ const loginUser = async (req, res, next) => {
 };
 
 const updateProfile = async (req, res, next) => {
-  
   let { fullName, userId, email, password, username } = req.body;
   console.log("req.body: ", req.body);
   console.log("req.files", req.files);
@@ -134,7 +134,7 @@ const updateProfile = async (req, res, next) => {
       console.error("Error updating username:", error);
       return res.status(500).json({ error: "Failed to update username" });
     }
-  } else if (email) {
+  } else if (email && userId) {
     try {
       console.log("email and userId", email, userId);
 
@@ -162,11 +162,19 @@ const updateProfile = async (req, res, next) => {
       }
 
       // Update anme of user
-      const updationResult = await User.updateOne(
-        { _id: userId }, // Filter
-        { $set: { password: password[0] } }
-      );
-      console.log("updation result: ", updationResult);
+      if (userId) {
+        const updationResult = await User.updateOne(
+          { _id: userId }, // Filter
+          { $set: { password: password[0] } }
+        );
+        console.log("updation result: ", updationResult);
+      } else {
+        const updationResult = await User.updateOne(
+          { email: email }, // Filter
+          { $set: { password: password[0] } }
+        );
+        console.log("updation result: ", updationResult);
+      }
 
       return res
         .status(201)
@@ -221,4 +229,59 @@ const updateProfile = async (req, res, next) => {
   }
 };
 
-export { registerUser, loginUser, updateProfile };
+const sendemail = async (req, res) => {
+  const { email, verificationCode, otp } = req.body;
+
+  console.log("req.body: ", req.body);
+
+  // Create a transporter object using SMTP transport
+  let transporter = nodemailer.createTransport({
+    service: "Gmail",
+    auth: {
+      user: "sonu.mondal.2027@gmail.com",
+      pass: "olpu rpqo rdcr gjdd",
+    },
+  });
+
+  console.log("transporter: ", transporter);
+
+  // Setup email data
+  let mailOptions = {
+    from: "sonu.mondal.2027@gmail.com",
+    to: email,
+    subject: "Email Verification Code",
+    text: `Your verification code is: ${verificationCode}`,
+  };
+
+  console.log("mailOptions: ", mailOptions);
+
+  try {
+    // Send mail with defined transport object
+    await transporter.sendMail(mailOptions);
+    res.send("Email sent successfully!");
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).send("Error sending email");
+  }
+};
+
+const finduser = async (req, res) => {
+  const { email } = req.body;
+  console.log("req.body: ", req.body);
+
+  try {
+    const response = await User.findOne({ email });
+
+    console.log("response of user found", response);
+    if (response) {
+      return res.status(201).json(new ApiResponse(200, response, "user found"));
+    } else {
+      throw error;
+    }
+  } catch (error) {
+    console.log("user not found: error: ", error);
+    return res.status(500).json({ error: "User not found" });
+  }
+};
+
+export { registerUser, loginUser, updateProfile, sendemail, finduser };

@@ -5,6 +5,7 @@ import { login } from './store/authSlice'
 
 import { useDispatch, useSelector } from 'react-redux'
 import Register from './Register'
+import { Link } from 'react-router-dom'
 
 function Login() {
 
@@ -45,7 +46,7 @@ function Login() {
         console.log('Login successful: data', data);
         console.log('data.data: ', data.data);
         console.log('data.data[0]._id: ', data.data[0]._id);
-        dispatch(login({ userId: data.data[0]._id, userProfilePhoto: data.data[0].image, fullName: data.data[0].fullName,  email:data.data[0].email, username:data.data[0].username, password:data.data[0].password,  }))
+        dispatch(login({ userId: data.data[0]._id, userProfilePhoto: data.data[0].image, fullName: data.data[0].fullName, email: data.data[0].email, username: data.data[0].username, password: data.data[0].password, }))
         console.log("image: ", data.data[0].image);
         console.log("status and userid in login ", status, userId, userProfilePhoto, email, username, password);
         // setLoggedIn(true)
@@ -72,7 +73,7 @@ function Login() {
       {
         gotoRegister ?
           <>
-          <Register/>
+            <Register />
           </>
           :
           <>
@@ -101,11 +102,14 @@ function Login() {
                     </form>
                     <br />
 
+                    <Link to="/forgotpassword">
+                      <div className='text-blue-400 hover:cursor-pointer'>
+                        Forgot password?
+                      </div>
+                    </Link>
+
                     <div>
                       Don't have an account? &nbsp;
-                      {/* <Link style={{ textDecoration: 'none' }} to='/api/v1/users/register'>
-                  <b className='text-blue-400'>Register</b>
-                </Link> */}
                       <b onClick={() => setGotoRegister(true)} className='text-blue-400 hover:cursor-pointer'>Register</b>
                     </div>
                   </div>
