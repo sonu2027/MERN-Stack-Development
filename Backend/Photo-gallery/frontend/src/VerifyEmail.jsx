@@ -114,7 +114,7 @@ function VerifyEmail({ email, formDatas }) {
                             <div className='text-white'>{time}</div>
                         </div>
                         {
-                            userExist && <div>User with {email} already exist</div>
+                            userExist && <div className='text-white'>User with {email} already exist</div>
                         }
                     </div>
             }

@@ -68,6 +68,7 @@ const deleteImage = async (req, res) => {
     );
 
     // delete from cloudinary
+    console.log("typeof req_img", typeof req_img);
     deleteFromCloudinary(req_img)
 
     return res

@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { userFound } from './store/passwordReq'
 
 function ForgotPassword() {
+
+    const dispatch=useDispatch()
 
     const navigate = useNavigate()
 
@@ -29,12 +33,14 @@ function ForgotPassword() {
 
                     if (response.ok) {
                         console.log("User found");
+                        dispatch(userFound({status:true}))
                         navigate(`/forgotpassword/ChangePassword/${mail}`)
                     }
                     else {
                         setFoundUser("false")
                         setTimeout(() => {
                             setFoundUser("")
+                            navigate("/")
                         }, 3000)
                         throw error
                     }

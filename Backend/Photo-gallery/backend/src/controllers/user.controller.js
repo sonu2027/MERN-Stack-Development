@@ -6,6 +6,7 @@ import {
   uploadOnCloudinary,
 } from "../utils/cloudinary.js";
 import nodemailer from "nodemailer";
+import fs from "fs"
 
 const registerUser = async (req, res, next) => {
   // get user details from frontend
@@ -33,10 +34,6 @@ const registerUser = async (req, res, next) => {
     $or: [{ username }, { email }],
   });
 
-  if (existedUser) {
-    throw new ApiError(409, "User with email or username already exists");
-  }
-
   let imageLocalPath;
   if (
     req.files &&
@@ -46,8 +43,13 @@ const registerUser = async (req, res, next) => {
     imageLocalPath = req.files.image[0].path;
   }
   console.log("imagelocalpath: ", imageLocalPath);
-  const image = await uploadOnCloudinary(imageLocalPath);
 
+  if (existedUser) {
+    fs.unlinkSync(imageLocalPath)
+    throw new ApiError(409, "User with email or username already exists");
+  }
+
+  const image = await uploadOnCloudinary(imageLocalPath);
   console.log("Image: ", image);
 
   const user = await User.create({

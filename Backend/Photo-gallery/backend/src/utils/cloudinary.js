@@ -25,13 +25,18 @@ const uploadOnCloudinary = async (localFilePath) => {
 };
 
 const deleteFromCloudinary = async (public_id) => {
-  // Delete the image from Cloudinary
-  cloudinary.uploader.destroy(public_id, (error, result) => {
-    if (error) {
-      console.error("Error deleting image:", error);
-    } else {
-      console.log("Image deleted successfully:", result);
-    }
+  return new Promise((resolve, reject) => {
+    // Delete the image from Cloudinary
+    console.log("delete for cloudinary called");
+    cloudinary.uploader.destroy(public_id, (error, result) => {
+      if (error) {
+        console.error("Error deleting image:", error);
+        reject(error);
+      } else {
+        console.log("Image deleted successfully:", result);
+        resolve(result);
+      }
+    });
   });
 };
 

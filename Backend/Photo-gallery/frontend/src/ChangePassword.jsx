@@ -1,8 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router';
 import { useNavigate } from 'react-router';
+import { useSelector, useDispatch } from 'react-redux';
+import { userFound } from './store/passwordReq';
 
 function ChangePassword() {
+
+    const userFoundStatus=useSelector((s)=>s.changePasswordReq.status)
+    const dispatch=useDispatch()
+
+    useEffect(()=>{
+        if(!userFoundStatus){
+            navigate("/")
+        }
+    }, [])
 
     const navigate = useNavigate()
 
@@ -29,6 +40,7 @@ function ChangePassword() {
                 if (response.ok) {
                     const data = await response.json();
                     console.log('Updation successful: data', data);
+                    dispatch(userFound({status:false}))
                     setMatchPassword("true")
                     setTimeout(() => {
                         setMatchPassword("")
@@ -56,6 +68,7 @@ function ChangePassword() {
         }
 
     }
+
 
     return (
         <div className=' bg-slate-800 h-screen'>
