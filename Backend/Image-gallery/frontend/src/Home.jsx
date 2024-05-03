@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { login, logout } from './store/authSlice.js';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import axios from 'axios';
 import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -11,15 +11,21 @@ import { IoPencil } from "react-icons/io5";
 
 import { IoSettingsSharp } from "react-icons/io5";
 import { IoLogOut } from "react-icons/io5";
+import useDetailHook from './customHooks/userDetailHook.js';
 
 function Home() {
 
     const dispatch = useDispatch();
-    const status = useSelector((s) => s.auth.status)
-    const userId = useSelector((s) => s.auth.userData.userId)
-    const userProfilePhoto = useSelector((s) => s.auth.userData.userProfilePhoto)
-    const fullName = useSelector((s) => s.auth.userData.fullName)
-    console.log("status and userid in login ", status, userId, userProfilePhoto, fullName);
+    const {
+        status,
+        userId,
+        userProfilePhoto,
+        fullName,
+        username,
+        email,
+        password,
+      } = useDetailHook()
+    
     const [uploadImage, setUploadImage] = useState(false)
     const [uploadFailed, setUploadfailed] = useState(false)
 

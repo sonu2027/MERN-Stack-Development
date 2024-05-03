@@ -1,21 +1,24 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from './store/authSlice.js';
 import { useState } from 'react';
 import Login from './Login.jsx';
 import VerifyEmail from './VerifyEmail.jsx';
+import useDetailHook from './customHooks/userDetailHook.js';
 
 function Register() {
 
   const [gotoLogin, setGotoLogin] = useState(false)
 
-  const dispatch = useDispatch()
-  const status = useSelector((s) => s.auth.status)
-  const userId = useSelector((s) => s.auth.userData.userId)
-  const userProfilePhoto = useSelector((s) => s.auth.userData.userProfilePhoto)
-  const fullName = useSelector((s) => s.auth.userData.fullName)
-  console.log("status and userid in login ", status, userId, userProfilePhoto, fullName);
+  const {
+    status,
+    userId,
+    userProfilePhoto,
+    fullName,
+    username,
+    email,
+    password,
+  } = useDetailHook()
 
   const [inputField, setInputField] = useState({
     username: "",

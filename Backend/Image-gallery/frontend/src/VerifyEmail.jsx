@@ -3,20 +3,30 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { login } from './store/authSlice'
 import Login from './Login.jsx'
+import useDetailHook from './customHooks/userDetailHook.js'
 
-function VerifyEmail({ email, formDatas }) {
+function VerifyEmail({ email, formDatas, requesting, setGotVerifyEmail, setChanges }) {
 
     const navigate = useNavigate()
-
     const dispatch = useDispatch();
-    const status = useSelector((s) => s.auth.status)
-    const userId = useSelector((s) => s.auth.userData.userId)
-    const userProfilePhoto = useSelector((s) => s.auth.userData.userProfilePhoto)
-    const fullName = useSelector((s) => s.auth.userData.fullName)
-    const emails = useSelector((s) => s.auth.userData.email)
-    const username = useSelector((s) => s.auth.userData.username)
-    const password = useSelector((s) => s.auth.userData.password)
-    console.log("status and userid in change ", status, userId, userProfilePhoto, fullName, username, emails, password);
+    const {
+        status,
+        userId,
+        userProfilePhoto,
+        fullName,
+        username,
+        email: emails,
+        password,
+    } = useDetailHook()
+
+    // const status = useSelector((s) => s.auth.status)
+    // const userId = useSelector((s) => s.auth.userData.userId)
+    // const userProfilePhoto = useSelector((s) => s.auth.userData.userProfilePhoto)
+    // const fullName = useSelector((s) => s.auth.userData.fullName)
+    // const emails = useSelector((s) => s.auth.userData.email)
+    // const username = useSelector((s) => s.auth.userData.username)
+    // const password = useSelector((s) => s.auth.userData.password)
+    // console.log("status and userid in change ", status, userId, userProfilePhoto, fullName, username, emails, password);
 
     const [time, setTime] = useState(60)
     const [inputOtp, setInputOtp] = useState("")
@@ -56,8 +66,13 @@ function VerifyEmail({ email, formDatas }) {
         }, 1000);
 
         setTimeout(() => {
-            setGotoLogin(true)
-            clearInterval(timerId);
+            if (requesting) {
+                setGotVerifyEmail(false)
+            }
+            else {
+                setGotoLogin(true)
+                clearInterval(timerId);
+            }
         }, 60000);
     }, [])
 
@@ -88,16 +103,58 @@ function VerifyEmail({ email, formDatas }) {
         }
     }
 
+    const ChangeEmailReq = async () => {
+        try {
+            const response = await fetch('http://localhost:5000/image', {
+                method: 'PUT',
+                body: formDatas
+            });
+            console.log("response for email update: ", response);
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log('email Updation successful: data', data);
+
+                dispatch(login({ userId: userId, userProfilePhoto: userProfilePhoto, fullName: fullName, email: data.data, username: username, password: password }))
+                // navigate("/home/setting/email")
+                setGotVerifyEmail(false)
+                setChanges("true")
+                setTimeout(() => {
+                    setChanges("")
+                }, 3000)
+
+            } else {
+                setGotVerifyEmail(false)
+                setChanges("false")
+                setTimeout(() => {
+                    setChanges("")
+                }, 3000)
+                console.error('email Updation failed:', response.statusText);
+            }
+        }
+        catch (error) {
+            console.log("error in change email : ", error);
+        }
+    }
+
     useEffect(() => {
         console.log("running");
-        if (realOtp == inputOtp) {
-            registerUser()
+        if (realOtp == inputOtp && !requesting) {
+            console.log("registerUser called");
+            registerUser().then((res) => {
+                console.log("res after registerUser: ", res);
+                if (status && !requesting) {
+                    navigate("/home")
+                }
+            })
+                .catch((e) => {
+                    console.log('Error while registering: ', e);
+                })
+        } else if (realOtp == inputOtp && requesting) {
+            console.log("ChangeEmailReq  called");
+            ChangeEmailReq()
         }
     }, [inputOtp])
-
-    if (status) {
-        navigate("/home")
-    }
 
 
     return (
@@ -111,7 +168,7 @@ function VerifyEmail({ email, formDatas }) {
                         <div className='text-center text-white'>Enter verification code send to {email}</div>
                         <div className='flex justify-center items-center mt-4 gap-x-2 w-screen'>
                             <input className='w-8/12 rounded-md text-white bg-slate-700 caret-white focus:outline-none p-2 sm:w-7/12 md:w-5/12' onChange={(e) => setInputOtp(e.target.value)} type="text" name="otp" id="otp" placeholder='Enter otp' />
-                            <div className='text-white'>{time}</div>
+                            <div className='text-white'>{time} sec</div>
                         </div>
                         {
                             userExist && <div className='text-white'>User with {email} already exist</div>

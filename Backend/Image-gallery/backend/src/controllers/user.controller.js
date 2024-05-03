@@ -6,7 +6,8 @@ import {
   uploadOnCloudinary,
 } from "../utils/cloudinary.js";
 import nodemailer from "nodemailer";
-import fs from "fs"
+import fs from "fs";
+import { Image } from "../models/image.model.js";
 
 const registerUser = async (req, res, next) => {
   // get user details from frontend
@@ -45,7 +46,7 @@ const registerUser = async (req, res, next) => {
   console.log("imagelocalpath: ", imageLocalPath);
 
   if (existedUser) {
-    fs.unlinkSync(imageLocalPath)
+    fs.unlinkSync(imageLocalPath);
     throw new ApiError(409, "User with email or username already exists");
   }
 
@@ -61,7 +62,10 @@ const registerUser = async (req, res, next) => {
     image_public_id: image?.public_id || "",
   });
 
-  const createdUser = await User.findById(user._id).select("-password");
+  // If you want that password don't go to response in frontend
+  // const createdUser = await User.findById(user._id).select("-password");
+
+  const createdUser = await User.findById(user._id);
 
   if (!createdUser) {
     throw new ApiError(500, "Something went wrong while registering the user");
@@ -286,4 +290,39 @@ const finduser = async (req, res) => {
   }
 };
 
-export { registerUser, loginUser, updateProfile, sendemail, finduser };
+const deleteAccount = async (req, res) => {
+  console.log("req.body", req.body);
+  const { userId, email } = req.body;
+  try {
+    const image = await Image.find({ ownerId: userId });
+    console.log("Images: ", image);
+    image.map(async (e) => {
+      deleteFromCloudinary(e.image_public_id);
+      await Image.deleteOne({ image_public_id: e.image_public_id });
+    });
+    const user=await User.findOne({email})
+    console.log("user:", user);
+    deleteFromCloudinary(user.image_public_id)
+    const response = await User.deleteOne({ email });
+    console.log("response", response);
+    if (response) {
+      return res
+        .status(201)
+        .json(new ApiResponse(200, response, "user deleted successfully"));
+    } else {
+      throw error;
+    }
+  } catch (error) {
+    console.log("user not found: error: ", error);
+    return res.status(500).json({ error: "User doesn't delete" });
+  }
+};
+
+export {
+  registerUser,
+  loginUser,
+  updateProfile,
+  sendemail,
+  finduser,
+  deleteAccount,
+};

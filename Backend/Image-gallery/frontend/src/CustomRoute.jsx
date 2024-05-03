@@ -8,6 +8,7 @@ import Setting from "./Setting.jsx";
 import Change from "./Change.jsx";
 import ForgotPassword from "./ForgotPassword.jsx";
 import ChangePassword from "./ChangePassword.jsx";
+import DeleteAccount from "./DeleteAccount.jsx";
 
 function CustomRoute() {
   return (
@@ -20,6 +21,7 @@ function CustomRoute() {
       <Route path="/api/v1/users/register" element={<Register />} />
       <Route path="/home/setting" element={<Setting />} />
       <Route path="/home/setting/:change" element={<Change />} />
+      <Route path="/home/setting/accountdeleteion" element={<DeleteAccount />} />
     </Routes>
   )
 }

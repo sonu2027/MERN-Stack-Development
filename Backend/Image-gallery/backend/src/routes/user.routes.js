@@ -47,4 +47,7 @@ router.route("/sendemail").post(upload.fields([]), sendemail);
 
 router.route("/finduser").post(upload.fields([]), finduser);
 
+import { deleteAccount } from "../controllers/user.controller.js";
+router.route("/deleteaccount").delete(upload.fields([]), deleteAccount);
+
 export default router;

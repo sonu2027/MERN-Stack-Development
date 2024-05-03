@@ -3,9 +3,10 @@ import { Navigate } from 'react-router-dom'
 
 import { login } from './store/authSlice'
 
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import Register from './Register'
 import { Link } from 'react-router-dom'
+import useDetailHook from './customHooks/userDetailHook'
 
 function Login() {
 
@@ -15,14 +16,15 @@ function Login() {
   // const [loggedIn, setLoggedIn] = useState(false)
 
   const dispatch = useDispatch();
-  const status = useSelector((s) => s.auth.status)
-  const userId = useSelector((s) => s.auth.userData.userId)
-  const userProfilePhoto = useSelector((s) => s.auth.userData.userProfilePhoto)
-  const fullName = useSelector((s) => s.auth.userData.fullName)
-  const email = useSelector((s) => s.auth.userData.email)
-  const username = useSelector((s) => s.auth.userData.username)
-  const password = useSelector((s) => s.auth.userData.password)
-  console.log("status and userid in login ", status, userId, userProfilePhoto, fullName, username, email, password);
+  const {
+    status,
+    userId,
+    userProfilePhoto,
+    fullName,
+    username,
+    email,
+    password,
+  } = useDetailHook()
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
